@@ -1,11 +1,11 @@
 # Home Assistant Bluetooth
 
 <p align="center">
-  <a href="https://github.com/bdraco/home-assistant-bluetooth/actions?query=workflow%3ACI">
-    <img src="https://img.shields.io/github/workflow/status/bdraco/home-assistant-bluetooth/CI/main?label=CI&logo=github&style=flat-square" alt="CI Status" >
+  <a href="https://github.com/home-assistant-libs/home-assistant-bluetooth/actions?query=workflow%3ACI">
+    <img src="https://img.shields.io/github/workflow/status/home-assistant-libs/home-assistant-bluetooth/CI/main?label=CI&logo=github&style=flat-square" alt="CI Status" >
   </a>
-  <a href="https://codecov.io/gh/bdraco/home-assistant-bluetooth">
-    <img src="https://img.shields.io/codecov/c/github/bdraco/home-assistant-bluetooth.svg?logo=codecov&logoColor=fff&style=flat-square" alt="Test coverage percentage">
+  <a href="https://codecov.io/gh/home-assistant-libs/home-assistant-bluetooth">
+    <img src="https://img.shields.io/codecov/c/github/home-assistant-libs/home-assistant-bluetooth.svg?logo=codecov&logoColor=fff&style=flat-square" alt="Test coverage percentage">
   </a>
 </p>
 <p align="center">
