@@ -5,9 +5,9 @@ description = "Home Assistant Bluetooth Models and Helpers"
 authors = ["J. Nick Koston <nick@home-assistant.io>"]
 license = "Apache Software License 2.0"
 readme = "README.md"
-repository = "https://github.com/bdraco/home-assistant-bluetooth"
+repository = "https://github.com/home-assistant-libs/home-assistant-bluetooth"
 classifiers = [
-    "Development Status :: 2 - Pre-Alpha",
+    "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
     "Natural Language :: English",
     "Operating System :: OS Independent",
@@ -18,15 +18,17 @@ packages = [
 ]
 
 [tool.poetry.urls]
-"Bug Tracker" = "https://github.com/bdraco/home-assistant-bluetooth/issues"
-"Changelog" = "https://github.com/bdraco/home-assistant-bluetooth/blob/main/CHANGELOG.md"
+"Bug Tracker" = "https://github.com/home-assistant-libs/home-assistant-bluetooth/issues"
+"Changelog" = "https://github.com/home-assistant-libs/home-assistant-bluetooth/blob/main/CHANGELOG.md"
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.9"
+bleak = ">=0.14.3"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.0"
 pytest-cov = "^3.0"
+bleak = ">=0.14.3"
 
 [tool.semantic_release]
 branch = "main"

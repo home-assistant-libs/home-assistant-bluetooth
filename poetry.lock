@@ -21,6 +21,29 @@ tests = ["coverage[toml] (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)"
 tests_no_zope = ["coverage[toml] (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "mypy", "pytest-mypy-plugins", "cloudpickle"]
 
 [[package]]
+name = "bleak"
+version = "0.14.3"
+description = "Bluetooth Low Energy platform Agnostic Klient"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+bleak-winrt = {version = ">=1.1.1", markers = "platform_system == \"Windows\""}
+dbus-next = {version = "*", markers = "platform_system == \"Linux\""}
+pyobjc-core = {version = "*", markers = "platform_system == \"Darwin\""}
+pyobjc-framework-CoreBluetooth = {version = "*", markers = "platform_system == \"Darwin\""}
+pyobjc-framework-libdispatch = {version = "*", markers = "platform_system == \"Darwin\""}
+
+[[package]]
+name = "bleak-winrt"
+version = "1.1.1"
+description = "Python WinRT bindings for Bleak"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "colorama"
 version = "0.4.5"
 description = "Cross-platform colored terminal text."
@@ -43,21 +66,12 @@ tomli = {version = "*", optional = true, markers = "python_full_version <= \"3.1
 toml = ["tomli"]
 
 [[package]]
-name = "importlib-metadata"
-version = "4.12.0"
-description = "Read metadata from Python packages"
-category = "dev"
+name = "dbus-next"
+version = "0.2.3"
+description = "A zero-dependency DBus library for Python with asyncio support"
+category = "main"
 optional = false
-python-versions = ">=3.7"
-
-[package.dependencies]
-typing-extensions = {version = ">=3.6.4", markers = "python_version < \"3.8\""}
-zipp = ">=0.5"
-
-[package.extras]
-docs = ["sphinx", "jaraco.packaging (>=9)", "rst.linker (>=1.9)"]
-perf = ["ipython"]
-testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-cov", "pytest-enabler (>=1.3)", "packaging", "pyfakefs", "flufl.flake8", "pytest-perf (>=0.9.2)", "pytest-black (>=0.3.7)", "pytest-mypy (>=0.9.1)", "importlib-resources (>=1.3)"]
+python-versions = ">=3.6.0"
 
 [[package]]
 name = "iniconfig"
@@ -86,9 +100,6 @@ category = "dev"
 optional = false
 python-versions = ">=3.6"
 
-[package.dependencies]
-importlib-metadata = {version = ">=0.12", markers = "python_version < \"3.8\""}
-
 [package.extras]
 dev = ["pre-commit", "tox"]
 testing = ["pytest", "pytest-benchmark"]
@@ -100,6 +111,48 @@ description = "library with cross-python path, ini-parsing, io, code, log facili
 category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+
+[[package]]
+name = "pyobjc-core"
+version = "8.5"
+description = "Python<->ObjC Interoperability Module"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
+name = "pyobjc-framework-cocoa"
+version = "8.5"
+description = "Wrappers for the Cocoa frameworks on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5"
+
+[[package]]
+name = "pyobjc-framework-corebluetooth"
+version = "8.5"
+description = "Wrappers for the framework CoreBluetooth on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5"
+pyobjc-framework-Cocoa = ">=8.5"
+
+[[package]]
+name = "pyobjc-framework-libdispatch"
+version = "8.5"
+description = "Wrappers for libdispatch on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5"
 
 [[package]]
 name = "pyparsing"
@@ -124,7 +177,6 @@ python-versions = ">=3.7"
 atomicwrites = {version = ">=1.0", markers = "sys_platform == \"win32\""}
 attrs = ">=19.2.0"
 colorama = {version = "*", markers = "sys_platform == \"win32\""}
-importlib-metadata = {version = ">=0.12", markers = "python_version < \"3.8\""}
 iniconfig = "*"
 packaging = "*"
 pluggy = ">=0.12,<2.0"
@@ -157,30 +209,10 @@ category = "dev"
 optional = false
 python-versions = ">=3.7"
 
-[[package]]
-name = "typing-extensions"
-version = "4.3.0"
-description = "Backported and Experimental Type Hints for Python 3.7+"
-category = "dev"
-optional = false
-python-versions = ">=3.7"
-
-[[package]]
-name = "zipp"
-version = "3.8.1"
-description = "Backport of pathlib-compatible object wrapper for zip files"
-category = "dev"
-optional = false
-python-versions = ">=3.7"
-
-[package.extras]
-docs = ["sphinx", "jaraco.packaging (>=9)", "rst.linker (>=1.9)", "jaraco.tidelift (>=1.4)"]
-testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-cov", "pytest-enabler (>=1.3)", "jaraco.itertools", "func-timeout", "pytest-black (>=0.3.7)", "pytest-mypy (>=0.9.1)"]
-
 [metadata]
 lock-version = "1.1"
-python-versions = "^3.7"
-content-hash = "0f20c2ec29bcf8b77e99a9bd04381d078608ae9e29872ea896882685b389daef"
+python-versions = "^3.9"
+content-hash = "a719b51a53f26ef45f11d82778c6f25a3c8e30a11052c89aac40e1c968bfdd84"
 
 [metadata.files]
 atomicwrites = []
@@ -188,12 +220,14 @@ attrs = [
     {file = "attrs-21.4.0-py2.py3-none-any.whl", hash = "sha256:2d27e3784d7a565d36ab851fe94887c5eccd6a463168875832a1be79c82828b4"},
     {file = "attrs-21.4.0.tar.gz", hash = "sha256:626ba8234211db98e869df76230a137c4c40a12d72445c45d5f5b716f076e2fd"},
 ]
+bleak = []
+bleak-winrt = []
 colorama = [
     {file = "colorama-0.4.5-py2.py3-none-any.whl", hash = "sha256:854bf444933e37f5824ae7bfc1e98d5bce2ebe4160d46b5edf346a89358e99da"},
     {file = "colorama-0.4.5.tar.gz", hash = "sha256:e6c6b4334fc50988a639d9b98aa429a0b57da6e17b9a44f0451f930b6967b7a4"},
 ]
 coverage = []
-importlib-metadata = []
+dbus-next = []
 iniconfig = [
     {file = "iniconfig-1.1.1-py2.py3-none-any.whl", hash = "sha256:011e24c64b7f47f6ebd835bb12a743f2fbe9a26d4cecaa7f53bc4f35ee9da8b3"},
     {file = "iniconfig-1.1.1.tar.gz", hash = "sha256:bc3af051d7d14b2ee5ef9969666def0cd1a000e121eaea580d4a313df4b37f32"},
@@ -210,6 +244,10 @@ py = [
     {file = "py-1.11.0-py2.py3-none-any.whl", hash = "sha256:607c53218732647dff4acdfcd50cb62615cedf612e72d1724fb1a0cc6405b378"},
     {file = "py-1.11.0.tar.gz", hash = "sha256:51c75c4126074b472f746a24399ad32f6053d1b34b68d2fa41e558e6f4a98719"},
 ]
+pyobjc-core = []
+pyobjc-framework-cocoa = []
+pyobjc-framework-corebluetooth = []
+pyobjc-framework-libdispatch = []
 pyparsing = [
     {file = "pyparsing-3.0.9-py3-none-any.whl", hash = "sha256:5026bae9a10eeaefb61dab2f09052b9f4307d44aee4eda64b309723d8d206bbc"},
     {file = "pyparsing-3.0.9.tar.gz", hash = "sha256:2b020ecf7d21b687f219b71ecad3631f644a47f01403fa1d1036b0c6416d70fb"},
@@ -226,5 +264,3 @@ tomli = [
     {file = "tomli-2.0.1-py3-none-any.whl", hash = "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc"},
     {file = "tomli-2.0.1.tar.gz", hash = "sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"},
 ]
-typing-extensions = []
-zipp = []
