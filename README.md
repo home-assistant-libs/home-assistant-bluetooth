@@ -29,6 +29,12 @@
 
 Home Assistant Bluetooth Models and Helpers
 
+## Usage
+
+This library is for accessing Home Assistant Bluetooth models.
+
+The data used to populate BluetoothServiceInfo comes from bleak's BLEDevice and AdvertisementData.
+
 ## Installation
 
 Install this via pip (or your favourite package manager):
