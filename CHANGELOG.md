@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v1.3.0 (2022-07-16)
+### Feature
+* Add additional docs on the data format ([#5](https://github.com/home-assistant-libs/home-assistant-bluetooth/issues/5)) ([`40445c6`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/40445c6c0f2f2dc2592c6263782db044e4e87b72))
+
 ## v1.2.0 (2022-07-16)
 ### Feature
 * Add a basic readme ([#3](https://github.com/home-assistant-libs/home-assistant-bluetooth/issues/3)) ([`486895b`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/486895bf83450f26877f6f92262a82810043a941))
