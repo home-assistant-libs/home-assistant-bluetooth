@@ -31,9 +31,25 @@ Home Assistant Bluetooth Models and Helpers
 
 ## Usage
 
-This library is for accessing Home Assistant Bluetooth models.
+This library is for accessing Home Assistant Bluetooth models. Libraries use these models to receive and parse Bluetooth advertisement data.
 
-The data used to populate BluetoothServiceInfo comes from bleak's BLEDevice and AdvertisementData.
+```python
+@dataclasses.dataclass
+class BluetoothServiceInfo(BaseServiceInfo):
+    """Prepared info from bluetooth entries."""
+
+    name: str
+    address: str
+    rssi: int
+    manufacturer_data: dict[int, bytes]
+    service_data: dict[str, bytes]
+    service_uuids: list[str]
+    source: str
+```
+
+The data used to populate BluetoothServiceInfo comes from [bleak](https://github.com/hbldh/bleak)'s `BLEDevice` and `AdvertisementData`, except for the `source` field, which comes from Home Assistant and represents the source of the data.
+
+In the future, Home Assistant may support remote Bluetooth transceivers, which may use the source field to determine which device is closest.
 
 ## Installation
 
