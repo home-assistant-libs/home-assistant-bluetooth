@@ -3,13 +3,17 @@ from __future__ import annotations
 
 import dataclasses
 from functools import cached_property
-from typing import TYPE_CHECKING, Final
+from typing import TYPE_CHECKING, Final, TypeVar
 
 SOURCE_LOCAL: Final = "local"
 
 if TYPE_CHECKING:
     from bleak.backends.device import BLEDevice
     from bleak.backends.scanner import AdvertisementData
+
+    _BluetoothServiceInfoSelfT = TypeVar(
+        "_BluetoothServiceInfoSelfT", bound="BluetoothServiceInfo"
+    )
 
 
 @dataclasses.dataclass
@@ -31,8 +35,11 @@ class BluetoothServiceInfo(BaseServiceInfo):
 
     @classmethod
     def from_advertisement(
-        cls, device: BLEDevice, advertisement_data: AdvertisementData, source: str
-    ) -> BluetoothServiceInfo:
+        cls: type[_BluetoothServiceInfoSelfT],
+        device: BLEDevice,
+        advertisement_data: AdvertisementData,
+        source: str,
+    ) -> _BluetoothServiceInfoSelfT:
         """Create a BluetoothServiceInfo from an advertisement."""
         return cls(
             name=advertisement_data.local_name or device.name or device.address,
