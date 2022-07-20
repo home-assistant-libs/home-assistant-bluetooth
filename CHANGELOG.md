@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v1.4.0 (2022-07-20)
+### Feature
+* Add typevar to enable better subclassing ([#6](https://github.com/home-assistant-libs/home-assistant-bluetooth/issues/6)) ([`9a9b75d`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/9a9b75d49e0849bcf87e48ba17d463358d296629))
+
 ## v1.3.0 (2022-07-16)
 ### Feature
 * Add additional docs on the data format ([#5](https://github.com/home-assistant-libs/home-assistant-bluetooth/issues/5)) ([`40445c6`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/40445c6c0f2f2dc2592c6263782db044e4e87b72))
