@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v1.5.0 (2022-10-04)
+### Feature
+* Freeze BluetoothServiceInfo dataclass ([#7](https://github.com/home-assistant-libs/home-assistant-bluetooth/issues/7)) ([`fafdd2a`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/fafdd2ac1a84506f7a3c51dba5426f1ded747e58))
+
 ## v1.4.0 (2022-07-20)
 ### Feature
 * Add typevar to enable better subclassing ([#6](https://github.com/home-assistant-libs/home-assistant-bluetooth/issues/6)) ([`9a9b75d`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/9a9b75d49e0849bcf87e48ba17d463358d296629))
