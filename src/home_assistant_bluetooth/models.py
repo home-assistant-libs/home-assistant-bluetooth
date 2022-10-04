@@ -16,12 +16,12 @@ if TYPE_CHECKING:
     )
 
 
-@dataclasses.dataclass
+@dataclasses.dataclass(frozen=True)
 class BaseServiceInfo:
     """Base class for discovery ServiceInfo."""
 
 
-@dataclasses.dataclass
+@dataclasses.dataclass(frozen=True)
 class BluetoothServiceInfo(BaseServiceInfo):
     """Prepared info from bluetooth entries."""
 
