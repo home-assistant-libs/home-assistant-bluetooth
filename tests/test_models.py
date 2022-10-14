@@ -4,6 +4,8 @@ from bleak.backends.scanner import AdvertisementData
 from home_assistant_bluetooth import SOURCE_LOCAL, BluetoothServiceInfo
 
 
+from . import generate_advertisement_data
+
 def test_model():
     service_info = BluetoothServiceInfo(
         name="Test",
@@ -34,7 +36,7 @@ def test_model():
 
 def test_model_from_bleak():
     switchbot_device = BLEDevice("44:44:33:11:23:45", "wohand")
-    switchbot_adv = AdvertisementData(
+    switchbot_adv = generate_advertisement_data(
         local_name="wohand", service_uuids=["cba20d00-224d-11e6-9fb8-0002a5d5c51b"]
     )
     service_info = BluetoothServiceInfo.from_advertisement(

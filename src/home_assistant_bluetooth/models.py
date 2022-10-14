@@ -54,7 +54,7 @@ class BluetoothServiceInfo(BaseServiceInfo):
     @cached_property
     def manufacturer(self) -> str | None:
         """Convert manufacturer data to a string."""
-        from bleak.backends.device import (  # pylint: disable=import-outside-toplevel
+        from bleak.backends._manufacturers import (  # pylint: disable=import-outside-toplevel
             MANUFACTURERS,
         )
 
