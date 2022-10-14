@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v1.6.0 (2022-10-14)
+### Feature
+* Update for bleak 0.19 ([#9](https://github.com/home-assistant-libs/home-assistant-bluetooth/issues/9)) ([`e872338`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/e87233872e8f059b86878de474fc733a8806c6fd))
+
 ## v1.5.1 (2022-10-04)
 ### Fix
 * Revert freeze BluetoothServiceInfo dataclass ([#8](https://github.com/home-assistant-libs/home-assistant-bluetooth/issues/8)) ([`c4cb1ab`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/c4cb1ab320196a8540fe06b3a34720e89d759cbd))
