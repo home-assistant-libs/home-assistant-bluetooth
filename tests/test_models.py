@@ -1,10 +1,9 @@
 from bleak.backends.device import BLEDevice
-from bleak.backends.scanner import AdvertisementData
 
 from home_assistant_bluetooth import SOURCE_LOCAL, BluetoothServiceInfo
 
-
 from . import generate_advertisement_data
+
 
 def test_model():
     service_info = BluetoothServiceInfo(

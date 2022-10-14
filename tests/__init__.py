@@ -1,8 +1,6 @@
-
-
 from typing import Any
 
-from bleak.backends.scanner import AdvertisementData, BLEDevice
+from bleak.backends.scanner import AdvertisementData
 
 ADVERTISEMENT_DATA_DEFAULTS = {
     "manufacturer_data": {},
@@ -10,7 +8,7 @@ ADVERTISEMENT_DATA_DEFAULTS = {
     "service_uuids": [],
     "rssi": -127,
     "platform_data": ((),),
-    "tx_power": -127
+    "tx_power": -127,
 }
 
 
@@ -20,4 +18,3 @@ def generate_advertisement_data(**kwargs: Any) -> AdvertisementData:
     for key, value in ADVERTISEMENT_DATA_DEFAULTS.items():
         new.setdefault(key, value)
     return AdvertisementData(**new)
-
