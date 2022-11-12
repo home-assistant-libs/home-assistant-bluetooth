@@ -1,7 +1,7 @@
 """The bluetooth integration service info."""
 
 from functools import cached_property
-from typing import Any, Dict, Final, List, TypeVar
+from typing import Any, Dict, Final, List, Type, TypeVar
 
 from bleak.backends.device import BLEDevice
 from bleak.backends.scanner import AdvertisementData
@@ -44,7 +44,7 @@ class BluetoothServiceInfo(BaseServiceInfo):
 
     @classmethod
     def from_advertisement(
-        cls: type[_BluetoothServiceInfoSelfT],
+        cls: Type[_BluetoothServiceInfoSelfT],
         device: BLEDevice,
         advertisement_data: AdvertisementData,
         source: str,
@@ -138,7 +138,7 @@ class BluetoothServiceInfoBleak(BluetoothServiceInfo):
 
     @classmethod
     def from_scan(
-        cls: type[_BluetoothServiceInfoBleakSelfT],
+        cls: Type[_BluetoothServiceInfoBleakSelfT],
         source: str,
         device: BLEDevice,
         advertisement_data: AdvertisementData,
