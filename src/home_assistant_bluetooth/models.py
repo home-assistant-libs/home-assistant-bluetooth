@@ -1,9 +1,8 @@
 """The bluetooth integration service info."""
-from __future__ import annotations
 
 import dataclasses
 from functools import cached_property
-from typing import Any, Final, TypeVar
+from typing import Any, Dict, List, Final, TypeVar
 
 from bleak.backends.device import BLEDevice
 from bleak.backends.scanner import AdvertisementData
@@ -14,22 +13,31 @@ _BluetoothServiceInfoSelfT = TypeVar(
 SOURCE_LOCAL: Final = "local"
 
 
-@dataclasses.dataclass
 class BaseServiceInfo:
     """Base class for discovery ServiceInfo."""
 
 
-@dataclasses.dataclass
 class BluetoothServiceInfo(BaseServiceInfo):
     """Prepared info from bluetooth entries."""
 
-    name: str
-    address: str
-    rssi: int
-    manufacturer_data: dict[int, bytes]
-    service_data: dict[str, bytes]
-    service_uuids: list[str]
-    source: str
+    def __init__(
+        self,
+        name: str,
+        address: str,
+        rssi: int,
+        manufacturer_data: Dict[int, bytes],
+        service_data: Dict[str, bytes],
+        service_uuids: List[str],
+        source: str,
+    ) -> None:
+        """Initialize a bluetooth service info."""
+        self.name = name
+        self.address = address
+        self.rssi = rssi
+        self.manufacturer_data = manufacturer_data
+        self.service_data = service_data
+        self.service_uuids = service_uuids
+        self.source = source
 
     @classmethod
     def from_advertisement(
@@ -40,13 +48,13 @@ class BluetoothServiceInfo(BaseServiceInfo):
     ) -> _BluetoothServiceInfoSelfT:
         """Create a BluetoothServiceInfo from an advertisement."""
         return cls(
-            name=advertisement_data.local_name or device.name or device.address,
-            address=device.address,
-            rssi=advertisement_data.rssi,
-            manufacturer_data=advertisement_data.manufacturer_data,
-            service_data=advertisement_data.service_data,
-            service_uuids=advertisement_data.service_uuids,
-            source=source,
+            advertisement_data.local_name or device.name or device.address,
+            device.address,
+            advertisement_data.rssi,
+            advertisement_data.manufacturer_data,
+            advertisement_data.service_data,
+            advertisement_data.service_uuids,
+            source,
         )
 
     @cached_property
@@ -70,7 +78,6 @@ class BluetoothServiceInfo(BaseServiceInfo):
         return None
 
 
-@dataclasses.dataclass
 class BluetoothServiceInfoBleak(BluetoothServiceInfo):
     """BluetoothServiceInfo with bleak data.
 
@@ -80,12 +87,33 @@ class BluetoothServiceInfoBleak(BluetoothServiceInfo):
     internal details.
     """
 
-    device: BLEDevice
-    advertisement: AdvertisementData
-    connectable: bool
-    time: float
+    def __init__(
+        self,
+        name: str,
+        address: str,
+        rssi: int,
+        manufacturer_data: Dict[int, bytes],
+        service_data: Dict[str, bytes],
+        service_uuids: List[str],
+        source: str,
+        device: BLEDevice,
+        advertisement: AdvertisementData,
+        connectable: bool,
+        time: float,
+    ) -> None:
+        self.name = name
+        self.address = address
+        self.rssi = rssi
+        self.manufacturer_data = manufacturer_data
+        self.service_data = service_data
+        self.service_uuids = service_uuids
+        self.source = source
+        self.device = device
+        self.advertisement = advertisement
+        self.connectable = connectable
+        self.time = time
 
-    def as_dict(self) -> dict[str, Any]:
+    def as_dict(self) -> Dict[str, Any]:
         """Return as dict.
 
         The dataclass asdict method is not used because
@@ -107,24 +135,24 @@ class BluetoothServiceInfoBleak(BluetoothServiceInfo):
 
     @classmethod
     def from_scan(
-        cls: BluetoothServiceInfoBleak,
+        cls: "BluetoothServiceInfoBleak",
         source: str,
         device: BLEDevice,
         advertisement_data: AdvertisementData,
         monotonic_time: float,
         connectable: bool,
-    ) -> BluetoothServiceInfoBleak:
+    ) -> "BluetoothServiceInfoBleak":
         """Create a BluetoothServiceInfoBleak from a scanner."""
         return cls(
-            name=advertisement_data.local_name or device.name or device.address,
-            address=device.address,
-            rssi=advertisement_data.rssi,
-            manufacturer_data=advertisement_data.manufacturer_data,
-            service_data=advertisement_data.service_data,
-            service_uuids=advertisement_data.service_uuids,
-            source=source,
-            device=device,
-            advertisement=advertisement_data,
-            connectable=connectable,
-            time=monotonic_time,
+            advertisement_data.local_name or device.name or device.address,
+            device.address,
+            advertisement_data.rssi,
+            advertisement_data.manufacturer_data,
+            advertisement_data.service_data,
+            advertisement_data.service_uuids,
+            source,
+            device,
+            advertisement_data,
+            connectable,
+            monotonic_time,
         )
