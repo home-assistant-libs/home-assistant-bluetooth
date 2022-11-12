@@ -1,8 +1,8 @@
 """The bluetooth integration service info."""
 
-from functools import cached_property
 from typing import Any, Dict, Final, List, Optional, Type, TypeVar
 
+from bleak.backends._manufacturers import MANUFACTURERS
 from bleak.backends.device import BLEDevice
 from bleak.backends.scanner import AdvertisementData
 
@@ -60,20 +60,14 @@ class BluetoothServiceInfo(BaseServiceInfo):
             source,
         )
 
-    @cached_property
     def manufacturer(self) -> Optional[str]:
         """Convert manufacturer data to a string."""
-        from bleak.backends._manufacturers import (  # pylint: disable=import-outside-toplevel
-            MANUFACTURERS,
-        )
-
         for manufacturer in self.manufacturer_data:
             if manufacturer in MANUFACTURERS:
                 name: str = MANUFACTURERS[manufacturer]
                 return name
         return None
 
-    @cached_property
     def manufacturer_id(self) -> Optional[int]:
         """Get the first manufacturer id."""
         for manufacturer in self.manufacturer_data:
