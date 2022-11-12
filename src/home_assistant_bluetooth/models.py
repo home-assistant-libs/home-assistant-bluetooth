@@ -11,6 +11,10 @@ from bleak.backends.scanner import AdvertisementData
 _BluetoothServiceInfoSelfT = TypeVar(
     "_BluetoothServiceInfoSelfT", bound="BluetoothServiceInfo"
 )
+
+_BluetoothServiceInfoBleakSelfT = TypeVar(
+    "_BluetoothServiceInfoBleakSelfT", bound="BluetoothServiceInfoBleak"
+)
 SOURCE_LOCAL: Final = "local"
 
 
@@ -107,13 +111,13 @@ class BluetoothServiceInfoBleak(BluetoothServiceInfo):
 
     @classmethod
     def from_scan(
-        cls: BluetoothServiceInfoBleak,
+        cls: type[_BluetoothServiceInfoBleakSelfT],
         source: str,
         device: BLEDevice,
         advertisement_data: AdvertisementData,
         monotonic_time: float,
         connectable: bool,
-    ) -> BluetoothServiceInfoBleak:
+    ) -> _BluetoothServiceInfoBleakSelfT:
         """Create a BluetoothServiceInfoBleak from a scanner."""
         return cls(
             name=advertisement_data.local_name or device.name or device.address,
