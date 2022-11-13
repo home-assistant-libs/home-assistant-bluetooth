@@ -60,6 +60,7 @@ class BluetoothServiceInfo(BaseServiceInfo):
             source,
         )
 
+    @property
     def manufacturer(self) -> Optional[str]:
         """Convert manufacturer data to a string."""
         for manufacturer in self.manufacturer_data:
@@ -68,6 +69,7 @@ class BluetoothServiceInfo(BaseServiceInfo):
                 return name
         return None
 
+    @property
     def manufacturer_id(self) -> Optional[int]:
         """Get the first manufacturer id."""
         for manufacturer in self.manufacturer_data:
