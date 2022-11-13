@@ -1,18 +1,18 @@
 """Build optional cython modules."""
 
+import contextlib
 import os
 from distutils.command.build_ext import build_ext
+from typing import Any
 
 
 class BuildExt(build_ext):
-    def build_extensions(self):
-        try:
+    def build_extensions(self) -> None:
+        with contextlib.suppress(Exception):
             super().build_extensions()
-        except Exception:
-            pass
 
 
-def build(setup_kwargs):
+def build(setup_kwargs: dict[Any, Any]) -> None:
     if os.environ.get("SKIP_CYTHON", False):
         return
     try:
