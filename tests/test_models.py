@@ -42,7 +42,7 @@ def test_model():
 
 
 def test_model_from_bleak():
-    switchbot_device = BLEDevice("44:44:33:11:23:45", "wohand")
+    switchbot_device = BLEDevice("44:44:33:11:23:45", "wohand", {}, -127)
     switchbot_adv = generate_advertisement_data(
         local_name="wohand", service_uuids=["cba20d00-224d-11e6-9fb8-0002a5d5c51b"]
     )
@@ -58,7 +58,7 @@ def test_model_from_bleak():
 
 
 def test_model_from_scanner():
-    switchbot_device = BLEDevice("44:44:33:11:23:45", "wohand")
+    switchbot_device = BLEDevice("44:44:33:11:23:45", "wohand", {}, -127)
     switchbot_adv = generate_advertisement_data(
         local_name="wohand", service_uuids=["cba20d00-224d-11e6-9fb8-0002a5d5c51b"]
     )
@@ -92,7 +92,7 @@ def test_model_from_scanner():
 
 
 def test_construct_service_info_bleak():
-    switchbot_device = BLEDevice("44:44:33:11:23:45", "wohand")
+    switchbot_device = BLEDevice("44:44:33:11:23:45", "wohand", {}, -127)
     switchbot_adv = generate_advertisement_data(
         local_name="wohand", service_uuids=["cba20d00-224d-11e6-9fb8-0002a5d5c51b"]
     )
