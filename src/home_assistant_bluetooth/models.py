@@ -23,6 +23,16 @@ class BaseServiceInfo:
 class BluetoothServiceInfo(BaseServiceInfo):
     """Prepared info from bluetooth entries."""
 
+    __slots__ = (
+        "name",
+        "address",
+        "rssi",
+        "manufacturer_data",
+        "service_data",
+        "service_uuids",
+        "source",
+    )
+
     def __init__(
         self,
         name: str,
@@ -85,6 +95,8 @@ class BluetoothServiceInfoBleak(BluetoothServiceInfo):
     another scan to translate the address to the system's
     internal details.
     """
+
+    __slots__ = ("device", "advertisement", "connectable", "time")
 
     def __init__(
         self,
