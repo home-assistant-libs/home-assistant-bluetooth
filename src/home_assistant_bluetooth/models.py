@@ -35,8 +35,8 @@ class BluetoothServiceInfo(BaseServiceInfo):
 
     def __init__(
         self,
-        name: str,
-        address: str,
+        name: Any,  # may be a pyobjc object
+        address: Any,  # may be a pyobjc object
         rssi: int,
         manufacturer_data: Dict[int, bytes],
         service_data: Dict[str, bytes],
@@ -100,8 +100,8 @@ class BluetoothServiceInfoBleak(BluetoothServiceInfo):
 
     def __init__(
         self,
-        name: str,
-        address: str,
+        name: Any,  # may be a pyobjc object
+        address: Any,  # may be a pyobjc object
         rssi: int,
         manufacturer_data: Dict[int, bytes],
         service_data: Dict[str, bytes],
