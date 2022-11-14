@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v1.7.0 (2022-11-14)
+### Feature
+* Move BluetoothServiceInfoBleak out of the bluetooth integration ([#10](https://github.com/home-assistant-libs/home-assistant-bluetooth/issues/10)) ([`fbc3d8e`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/fbc3d8e240291ccc7c4ced7d9ae962d8407c4da0))
+
 ## v1.6.0 (2022-10-14)
 ### Feature
 * Update for bleak 0.19 ([#9](https://github.com/home-assistant-libs/home-assistant-bluetooth/issues/9)) ([`e872338`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/e87233872e8f059b86878de474fc733a8806c6fd))
