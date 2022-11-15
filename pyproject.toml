@@ -13,6 +13,7 @@ classifiers = [
     "Operating System :: OS Independent",
     "Topic :: Software Development :: Libraries",
 ]
+build = "build.py"
 packages = [
     { include = "home_assistant_bluetooth", from = "src" },
 ]
@@ -29,6 +30,11 @@ bleak = ">=0.19.0"
 pytest = "^7.0"
 pytest-cov = "^3.0"
 bleak = ">=0.14.3"
+
+[tool.poetry.group.dev.dependencies]
+cython = "^0.29.32"
+setuptools = "^65.5.1"
+wheel = "^0.38.4"
 
 [tool.semantic_release]
 branch = "main"
@@ -74,5 +80,5 @@ module = "tests.*"
 allow_untyped_defs = true
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ['setuptools>=65.4.1', 'wheel', 'Cython', "poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"

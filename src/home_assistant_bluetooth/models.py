@@ -1,10 +1,8 @@
 """The bluetooth integration service info."""
-from __future__ import annotations
 
-import dataclasses
-from functools import cached_property
-from typing import Any, Final, TypeVar
+from typing import Any, Dict, Final, List, Optional, Type, TypeVar
 
+from bleak.backends._manufacturers import MANUFACTURERS
 from bleak.backends.device import BLEDevice
 from bleak.backends.scanner import AdvertisementData
 
@@ -18,63 +16,77 @@ _BluetoothServiceInfoBleakSelfT = TypeVar(
 SOURCE_LOCAL: Final = "local"
 
 
-@dataclasses.dataclass
 class BaseServiceInfo:
     """Base class for discovery ServiceInfo."""
 
 
-@dataclasses.dataclass
 class BluetoothServiceInfo(BaseServiceInfo):
     """Prepared info from bluetooth entries."""
 
-    name: str
-    address: str
-    rssi: int
-    manufacturer_data: dict[int, bytes]
-    service_data: dict[str, bytes]
-    service_uuids: list[str]
-    source: str
+    __slots__ = (
+        "name",
+        "address",
+        "rssi",
+        "manufacturer_data",
+        "service_data",
+        "service_uuids",
+        "source",
+    )
+
+    def __init__(
+        self,
+        name: Any,  # may be a pyobjc object
+        address: Any,  # may be a pyobjc object
+        rssi: int,
+        manufacturer_data: Dict[int, bytes],
+        service_data: Dict[str, bytes],
+        service_uuids: List[str],
+        source: str,
+    ) -> None:
+        """Initialize a bluetooth service info."""
+        self.name = name
+        self.address = address
+        self.rssi = rssi
+        self.manufacturer_data = manufacturer_data
+        self.service_data = service_data
+        self.service_uuids = service_uuids
+        self.source = source
 
     @classmethod
     def from_advertisement(
-        cls: type[_BluetoothServiceInfoSelfT],
+        cls: Type[_BluetoothServiceInfoSelfT],
         device: BLEDevice,
         advertisement_data: AdvertisementData,
         source: str,
     ) -> _BluetoothServiceInfoSelfT:
         """Create a BluetoothServiceInfo from an advertisement."""
         return cls(
-            name=advertisement_data.local_name or device.name or device.address,
-            address=device.address,
-            rssi=advertisement_data.rssi,
-            manufacturer_data=advertisement_data.manufacturer_data,
-            service_data=advertisement_data.service_data,
-            service_uuids=advertisement_data.service_uuids,
-            source=source,
+            advertisement_data.local_name or device.name or device.address,
+            device.address,
+            advertisement_data.rssi,
+            advertisement_data.manufacturer_data,
+            advertisement_data.service_data,
+            advertisement_data.service_uuids,
+            source,
         )
 
-    @cached_property
-    def manufacturer(self) -> str | None:
+    @property
+    def manufacturer(self) -> Optional[str]:
         """Convert manufacturer data to a string."""
-        from bleak.backends._manufacturers import (  # pylint: disable=import-outside-toplevel
-            MANUFACTURERS,
-        )
-
         for manufacturer in self.manufacturer_data:
             if manufacturer in MANUFACTURERS:
                 name: str = MANUFACTURERS[manufacturer]
                 return name
         return None
 
-    @cached_property
-    def manufacturer_id(self) -> int | None:
+    @property
+    def manufacturer_id(self) -> Optional[int]:
         """Get the first manufacturer id."""
         for manufacturer in self.manufacturer_data:
             return manufacturer
         return None
 
 
-@dataclasses.dataclass
 class BluetoothServiceInfoBleak(BluetoothServiceInfo):
     """BluetoothServiceInfo with bleak data.
 
@@ -84,12 +96,35 @@ class BluetoothServiceInfoBleak(BluetoothServiceInfo):
     internal details.
     """
 
-    device: BLEDevice
-    advertisement: AdvertisementData
-    connectable: bool
-    time: float
+    __slots__ = ("device", "advertisement", "connectable", "time")
 
-    def as_dict(self) -> dict[str, Any]:
+    def __init__(
+        self,
+        name: Any,  # may be a pyobjc object
+        address: Any,  # may be a pyobjc object
+        rssi: int,
+        manufacturer_data: Dict[int, bytes],
+        service_data: Dict[str, bytes],
+        service_uuids: List[str],
+        source: str,
+        device: BLEDevice,
+        advertisement: AdvertisementData,
+        connectable: bool,
+        time: float,
+    ) -> None:
+        self.name = name
+        self.address = address
+        self.rssi = rssi
+        self.manufacturer_data = manufacturer_data
+        self.service_data = service_data
+        self.service_uuids = service_uuids
+        self.source = source
+        self.device = device
+        self.advertisement = advertisement
+        self.connectable = connectable
+        self.time = time
+
+    def as_dict(self) -> Dict[str, Any]:
         """Return as dict.
 
         The dataclass asdict method is not used because
@@ -111,7 +146,7 @@ class BluetoothServiceInfoBleak(BluetoothServiceInfo):
 
     @classmethod
     def from_scan(
-        cls: type[_BluetoothServiceInfoBleakSelfT],
+        cls: Type[_BluetoothServiceInfoBleakSelfT],
         source: str,
         device: BLEDevice,
         advertisement_data: AdvertisementData,
@@ -120,15 +155,15 @@ class BluetoothServiceInfoBleak(BluetoothServiceInfo):
     ) -> _BluetoothServiceInfoBleakSelfT:
         """Create a BluetoothServiceInfoBleak from a scanner."""
         return cls(
-            name=advertisement_data.local_name or device.name or device.address,
-            address=device.address,
-            rssi=advertisement_data.rssi,
-            manufacturer_data=advertisement_data.manufacturer_data,
-            service_data=advertisement_data.service_data,
-            service_uuids=advertisement_data.service_uuids,
-            source=source,
-            device=device,
-            advertisement=advertisement_data,
-            connectable=connectable,
-            time=monotonic_time,
+            advertisement_data.local_name or device.name or device.address,
+            device.address,
+            advertisement_data.rssi,
+            advertisement_data.manufacturer_data,
+            advertisement_data.service_data,
+            advertisement_data.service_uuids,
+            source,
+            device,
+            advertisement_data,
+            connectable,
+            monotonic_time,
         )
