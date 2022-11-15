@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v1.8.0 (2022-11-15)
+### Feature
+* Cythonize the models ([#12](https://github.com/home-assistant-libs/home-assistant-bluetooth/issues/12)) ([`e65e000`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/e65e000084b55c404cffa8745fa87c774e294c6c))
+
 ## v1.7.0 (2022-11-14)
 ### Feature
 * Move BluetoothServiceInfoBleak out of the bluetooth integration ([#10](https://github.com/home-assistant-libs/home-assistant-bluetooth/issues/10)) ([`fbc3d8e`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/fbc3d8e240291ccc7c4ced7d9ae962d8407c4da0))
