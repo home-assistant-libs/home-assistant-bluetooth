@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v1.8.1 (2022-11-16)
+### Fix
+* Name collision with build that prevented PEP517 builds ([#14](https://github.com/home-assistant-libs/home-assistant-bluetooth/issues/14)) ([`032552d`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/032552d9d35306d406853d0473ba4b1c08963c95))
+
 ## v1.8.0 (2022-11-15)
 ### Feature
 * Cythonize the models ([#12](https://github.com/home-assistant-libs/home-assistant-bluetooth/issues/12)) ([`e65e000`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/e65e000084b55c404cffa8745fa87c774e294c6c))
