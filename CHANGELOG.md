@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v1.9.0 (2022-12-10)
+### Feature
+* Add from_device_and_advertisement_data classmethod to BluetoothServiceInfoBleak ([#15](https://github.com/home-assistant-libs/home-assistant-bluetooth/issues/15)) ([`c231594`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/c2315946d75350c2848c00dec144b9ab198e629e))
+
 ## v1.8.1 (2022-11-16)
 ### Fix
 * Name collision with build that prevented PEP517 builds ([#14](https://github.com/home-assistant-libs/home-assistant-bluetooth/issues/14)) ([`032552d`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/032552d9d35306d406853d0473ba4b1c08963c95))
