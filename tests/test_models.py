@@ -133,3 +133,36 @@ def test_construct_service_info_bleak():
         "source": "local",
         "time": now,
     }
+
+
+def test_from_device_and_advertisement_data():
+    """Test creating a BluetoothServiceInfoBleak from a BLEDevice and AdvertisementData."""
+    switchbot_device = BLEDevice("44:44:33:11:23:45", "wohand", {}, -127)
+    switchbot_adv = generate_advertisement_data(
+        local_name="wohand", service_uuids=["cba20d00-224d-11e6-9fb8-0002a5d5c51b"]
+    )
+    now_monotonic = time.monotonic()
+    service_info = BluetoothServiceInfoBleak.from_device_and_advertisement_data(
+        switchbot_device, switchbot_adv, SOURCE_LOCAL, now_monotonic, True
+    )
+
+    assert service_info.service_uuids == ["cba20d00-224d-11e6-9fb8-0002a5d5c51b"]
+    assert service_info.name == "wohand"
+    assert service_info.source == SOURCE_LOCAL
+    assert service_info.manufacturer is None
+    assert service_info.manufacturer_id is None
+
+    safe_as_dict = service_info.as_dict()
+    assert safe_as_dict == {
+        "address": "44:44:33:11:23:45",
+        "advertisement": switchbot_adv,
+        "device": switchbot_device,
+        "connectable": True,
+        "manufacturer_data": {},
+        "name": "wohand",
+        "rssi": -127,
+        "service_data": {},
+        "service_uuids": ["cba20d00-224d-11e6-9fb8-0002a5d5c51b"],
+        "source": "local",
+        "time": now_monotonic,
+    }
