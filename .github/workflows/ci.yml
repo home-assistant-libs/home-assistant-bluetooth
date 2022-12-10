@@ -41,7 +41,6 @@ jobs:
           - "3.11"
         os:
           - ubuntu-latest
-          - macOS-latest
         extension:
           - "skip_cython"
           - "use_cython"
