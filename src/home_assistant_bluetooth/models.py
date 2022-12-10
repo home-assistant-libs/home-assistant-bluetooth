@@ -167,3 +167,27 @@ class BluetoothServiceInfoBleak(BluetoothServiceInfo):
             connectable,
             monotonic_time,
         )
+
+    @classmethod
+    def from_device_and_advertisement_data(
+        cls: Type[_BluetoothServiceInfoBleakSelfT],
+        device: BLEDevice,
+        advertisement_data: AdvertisementData,
+        source: str,
+        time: float,
+        connectable: bool,
+    ) -> _BluetoothServiceInfoBleakSelfT:
+        """Create a BluetoothServiceInfoBleak from a device and advertisement."""
+        return cls(
+            advertisement_data.local_name or device.name or device.address,
+            device.address,
+            advertisement_data.rssi,
+            advertisement_data.manufacturer_data,
+            advertisement_data.service_data,
+            advertisement_data.service_uuids,
+            source,
+            device,
+            advertisement_data,
+            connectable,
+            time,
+        )
