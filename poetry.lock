@@ -2,7 +2,7 @@
 name = "async-timeout"
 version = "4.0.2"
 description = "Timeout context manager for asyncio programs"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 
@@ -24,7 +24,7 @@ tests-no-zope = ["cloudpickle", "coverage[toml] (>=5.0.2)", "hypothesis", "mypy 
 name = "bleak"
 version = "0.19.5"
 description = "Bluetooth Low Energy platform Agnostic Klient"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7,<4.0"
 
@@ -40,7 +40,7 @@ pyobjc-framework-libdispatch = {version = ">=8.5.1,<9.0.0", markers = "platform_
 name = "bleak-winrt"
 version = "1.2.0"
 description = "Python WinRT bindings for Bleak"
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -78,7 +78,7 @@ python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
 name = "dbus-fast"
 version = "1.82.0"
 description = "A faster version of dbus-next"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7,<4.0"
 
@@ -128,7 +128,7 @@ testing = ["pytest", "pytest-benchmark"]
 name = "pyobjc-core"
 version = "8.5.1"
 description = "Python<->ObjC Interoperability Module"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 
@@ -136,7 +136,7 @@ python-versions = ">=3.6"
 name = "pyobjc-framework-cocoa"
 version = "8.5.1"
 description = "Wrappers for the Cocoa frameworks on macOS"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 
@@ -147,7 +147,7 @@ pyobjc-core = ">=8.5.1"
 name = "pyobjc-framework-corebluetooth"
 version = "8.5.1"
 description = "Wrappers for the framework CoreBluetooth on macOS"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 
@@ -159,7 +159,7 @@ pyobjc-framework-Cocoa = ">=8.5.1"
 name = "pyobjc-framework-libdispatch"
 version = "8.5.1"
 description = "Wrappers for libdispatch on macOS"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 
@@ -188,7 +188,7 @@ testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "pygments (>=2.
 
 [[package]]
 name = "pytest-cov"
-version = "3.0.0"
+version = "4.0.0"
 description = "Pytest plugin for measuring coverage."
 category = "dev"
 optional = false
@@ -236,7 +236,7 @@ test = ["pytest (>=3.0.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "5e342424c7f3daf98f9e983e2a17bbec4822af1d37fa02cea2c11a5c58350f97"
+content-hash = "b98c56a79d3fa5fe2d3365bc80b7c6f8b931879355e136280727f18e4aa72d0a"
 
 [metadata.files]
 async-timeout = [
@@ -449,8 +449,8 @@ pytest = [
     {file = "pytest-7.2.0.tar.gz", hash = "sha256:c4014eb40e10f11f355ad4e3c2fb2c6c6d1919c73f3b5a433de4708202cade59"},
 ]
 pytest-cov = [
-    {file = "pytest-cov-3.0.0.tar.gz", hash = "sha256:e7f0f5b1617d2210a2cabc266dfe2f4c75a8d32fb89eafb7ad9d06f6d076d470"},
-    {file = "pytest_cov-3.0.0-py3-none-any.whl", hash = "sha256:578d5d15ac4a25e5f961c938b85a05b09fdaae9deef3bb6de9a6e766622ca7a6"},
+    {file = "pytest-cov-4.0.0.tar.gz", hash = "sha256:996b79efde6433cdbd0088872dbc5fb3ed7fe1578b68cdbba634f14bb8dd0470"},
+    {file = "pytest_cov-4.0.0-py3-none-any.whl", hash = "sha256:2feb1b751d66a8bd934e5edfa2e961d11309dc37b73b0eabe73b5945fee20f6b"},
 ]
 setuptools = [
     {file = "setuptools-65.6.3-py3-none-any.whl", hash = "sha256:57f6f22bde4e042978bcd50176fdb381d7c21a9efa4041202288d3737a0c6a54"},

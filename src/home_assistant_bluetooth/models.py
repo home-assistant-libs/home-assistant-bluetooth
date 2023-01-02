@@ -1,10 +1,12 @@
 """The bluetooth integration service info."""
 
-from typing import Any, Dict, Final, List, Optional, Type, TypeVar
+from typing import TYPE_CHECKING, Any, Dict, Final, List, Optional, Type, TypeVar
 
 from bleak.backends._manufacturers import MANUFACTURERS
-from bleak.backends.device import BLEDevice
-from bleak.backends.scanner import AdvertisementData
+
+if TYPE_CHECKING:
+    from bleak.backends.device import BLEDevice
+    from bleak.backends.scanner import AdvertisementData
 
 _BluetoothServiceInfoSelfT = TypeVar(
     "_BluetoothServiceInfoSelfT", bound="BluetoothServiceInfo"
@@ -107,8 +109,8 @@ class BluetoothServiceInfoBleak(BluetoothServiceInfo):
         service_data: Dict[str, bytes],
         service_uuids: List[str],
         source: str,
-        device: BLEDevice,
-        advertisement: AdvertisementData,
+        device: "BLEDevice",
+        advertisement: "AdvertisementData",
         connectable: bool,
         time: float,
     ) -> None:
@@ -148,8 +150,8 @@ class BluetoothServiceInfoBleak(BluetoothServiceInfo):
     def from_scan(
         cls: Type[_BluetoothServiceInfoBleakSelfT],
         source: str,
-        device: BLEDevice,
-        advertisement_data: AdvertisementData,
+        device: "BLEDevice",
+        advertisement_data: "AdvertisementData",
         monotonic_time: float,
         connectable: bool,
     ) -> _BluetoothServiceInfoBleakSelfT:
@@ -171,8 +173,8 @@ class BluetoothServiceInfoBleak(BluetoothServiceInfo):
     @classmethod
     def from_device_and_advertisement_data(
         cls: Type[_BluetoothServiceInfoBleakSelfT],
-        device: BLEDevice,
-        advertisement_data: AdvertisementData,
+        device: "BLEDevice",
+        advertisement_data: "AdvertisementData",
         source: str,
         time: float,
         connectable: bool,

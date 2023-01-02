@@ -24,7 +24,6 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.9"
-bleak = ">=0.19.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.0"
@@ -35,6 +34,8 @@ bleak = ">=0.14.3"
 cython = "^0.29.32"
 setuptools = "^65.5.1"
 wheel = "^0.38.4"
+bleak = ">=0.19.2"
+pytest-cov = "^4.0.0"
 
 [tool.semantic_release]
 branch = "main"
