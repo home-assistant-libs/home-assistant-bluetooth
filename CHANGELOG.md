@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v1.9.1 (2023-01-02)
+### Fix
+* Make bleak a dev requirement ([#16](https://github.com/home-assistant-libs/home-assistant-bluetooth/issues/16)) ([`0506ca4`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/0506ca4e341e9ed4607c8be9fab167dd2dc429b6))
+
 ## v1.9.0 (2022-12-10)
 ### Feature
 * Add from_device_and_advertisement_data classmethod to BluetoothServiceInfoBleak ([#15](https://github.com/home-assistant-libs/home-assistant-bluetooth/issues/15)) ([`c231594`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/c2315946d75350c2848c00dec144b9ab198e629e))
