@@ -57,8 +57,8 @@ class BluetoothServiceInfo(BaseServiceInfo):
     @classmethod
     def from_advertisement(
         cls: Type[_BluetoothServiceInfoSelfT],
-        device: BLEDevice,
-        advertisement_data: AdvertisementData,
+        device: "BLEDevice",
+        advertisement_data: "AdvertisementData",
         source: str,
     ) -> _BluetoothServiceInfoSelfT:
         """Create a BluetoothServiceInfo from an advertisement."""
