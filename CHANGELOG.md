@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v1.9.2 (2023-01-04)
+### Fix
+* Make MANUFACTURERS import late ([#17](https://github.com/home-assistant-libs/home-assistant-bluetooth/issues/17)) ([`c783cd8`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/c783cd82623b4317601ab7c5486950a31e1bf9aa))
+
 ## v1.9.1 (2023-01-02)
 ### Fix
 * Make bleak a dev requirement ([#16](https://github.com/home-assistant-libs/home-assistant-bluetooth/issues/16)) ([`0506ca4`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/0506ca4e341e9ed4607c8be9fab167dd2dc429b6))
