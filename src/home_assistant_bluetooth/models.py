@@ -2,8 +2,6 @@
 
 from typing import TYPE_CHECKING, Any, Dict, Final, List, Optional, Type, TypeVar
 
-from bleak.backends._manufacturers import MANUFACTURERS
-
 if TYPE_CHECKING:
     from bleak.backends.device import BLEDevice
     from bleak.backends.scanner import AdvertisementData
@@ -75,6 +73,10 @@ class BluetoothServiceInfo(BaseServiceInfo):
     @property
     def manufacturer(self) -> Optional[str]:
         """Convert manufacturer data to a string."""
+        from bleak.backends._manufacturers import (
+            MANUFACTURERS,  # pylint: disable=import-outside-toplevel
+        )
+
         for manufacturer in self.manufacturer_data:
             if manufacturer in MANUFACTURERS:
                 name: str = MANUFACTURERS[manufacturer]
