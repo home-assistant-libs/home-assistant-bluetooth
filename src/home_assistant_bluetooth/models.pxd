@@ -2,6 +2,10 @@
 cdef object BLEDevice
 cdef object AdvertisementData
 
+cdef object _float
+cdef object _BluetoothServiceInfoBleakSelfT
+cdef object _BluetoothServiceInfoSelfT
+
 cdef class BaseServiceInfo:
     """Base class for discovery ServiceInfo."""
 
