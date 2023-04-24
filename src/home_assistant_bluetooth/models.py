@@ -15,6 +15,8 @@ _BluetoothServiceInfoBleakSelfT = TypeVar(
 )
 SOURCE_LOCAL: Final = "local"
 
+_float = float  # avoid cython conversion since we always want a pyfloat
+
 
 class BaseServiceInfo:
     """Base class for discovery ServiceInfo."""
@@ -113,8 +115,8 @@ class BluetoothServiceInfoBleak(BluetoothServiceInfo):
         source: str,
         device: "BLEDevice",
         advertisement: "AdvertisementData",
-        connectable: bool,
-        time: float,
+        connectable: "bool",
+        time: "_float",
     ) -> None:
         self.name = name
         self.address = address
@@ -154,8 +156,8 @@ class BluetoothServiceInfoBleak(BluetoothServiceInfo):
         source: str,
         device: "BLEDevice",
         advertisement_data: "AdvertisementData",
-        monotonic_time: float,
-        connectable: bool,
+        monotonic_time: "_float",
+        connectable: "bool",
     ) -> _BluetoothServiceInfoBleakSelfT:
         """Create a BluetoothServiceInfoBleak from a scanner."""
         return cls(
@@ -174,12 +176,12 @@ class BluetoothServiceInfoBleak(BluetoothServiceInfo):
 
     @classmethod
     def from_device_and_advertisement_data(
-        cls: Type[_BluetoothServiceInfoBleakSelfT],
+        cls: "Type[_BluetoothServiceInfoBleakSelfT]",
         device: "BLEDevice",
         advertisement_data: "AdvertisementData",
         source: str,
-        time: float,
-        connectable: bool,
+        time: "_float",
+        connectable: "bool",
     ) -> _BluetoothServiceInfoBleakSelfT:
         """Create a BluetoothServiceInfoBleak from a device and advertisement."""
         return cls(
