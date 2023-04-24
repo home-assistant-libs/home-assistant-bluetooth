@@ -1,4 +1,4 @@
-__version__ = "1.9.3"
+__version__ = "1.10.0"
 
 from .models import (
     SOURCE_LOCAL,

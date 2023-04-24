@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v1.10.0 (2023-04-24)
+### Feature
+* Optimize from_device_and_advertisement_data ([#21](https://github.com/home-assistant-libs/home-assistant-bluetooth/issues/21)) ([`72bd815`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/72bd815ae2694b8f88d62ff2039ef221daf243c9))
+
 ## v1.9.3 (2023-02-14)
 ### Fix
 * Missing c extensions with newer poetry ([#18](https://github.com/home-assistant-libs/home-assistant-bluetooth/issues/18)) ([`866236a`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/866236aeb52c2b6b3da67ac9b06df7904a464351))
