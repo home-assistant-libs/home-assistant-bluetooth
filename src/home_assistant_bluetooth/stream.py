@@ -5,7 +5,6 @@ from bleak.backends.device import BLEDevice
 from bleak.backends.scanner import AdvertisementData
 
 from .models import BluetoothServiceInfoBleak
-from .time import monotonic_time_coarse
 
 NO_RSSI_VALUE = -127
 
@@ -26,6 +25,7 @@ class BluetoothAdvertisementStream:
 
     def process(
         self,
+        monotonic_time: _float,
         address: _str,
         rssi: _int,
         local_name: Optional[_str],
@@ -36,7 +36,6 @@ class BluetoothAdvertisementStream:
         details: Dict[Any, Any],
     ) -> BluetoothServiceInfoBleak:
         """Create a new BluetoothServiceInfoBleak from incoming data and previous discovery."""
-        monotonic_time = monotonic_time_coarse()
         prev_discovery = self._previous.get(address)
         if prev_discovery:
             # Merge the new data with the old data
