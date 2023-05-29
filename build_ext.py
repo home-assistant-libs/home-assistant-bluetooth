@@ -23,6 +23,7 @@ def build(setup_kwargs: dict[Any, Any]) -> None:
                 ext_modules=cythonize(
                     [
                         "src/home_assistant_bluetooth/models.py",
+                        "src/home_assistant_bluetooth/stream.py",
                     ],
                     compiler_directives={"language_level": "3"},  # Python 3
                 ),

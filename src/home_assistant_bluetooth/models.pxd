@@ -1,4 +1,7 @@
 
+import cython
+
+
 cdef object BLEDevice
 cdef object AdvertisementData
 
@@ -13,13 +16,13 @@ cdef class BaseServiceInfo:
 cdef class BluetoothServiceInfo(BaseServiceInfo):
     """Prepared info from bluetooth entries."""
 
-    cdef public object name
-    cdef public object address
+    cdef public str name
+    cdef public str address
     cdef public object rssi
-    cdef public object manufacturer_data
-    cdef public object service_data
-    cdef public object service_uuids
-    cdef public object source
+    cdef public cython.dict manufacturer_data
+    cdef public cython.dict service_data
+    cdef public cython.list service_uuids
+    cdef public str source
 
 
 cdef class BluetoothServiceInfoBleak(BluetoothServiceInfo):
