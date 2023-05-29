@@ -74,7 +74,7 @@ class BluetoothAdvertisementStream:
             #
             device = prev_discovery.device
             device.name = local_name
-            device.details = ({**self._details, **details},)
+            device.details = {**self._details, **details}
             # pylint: disable-next=protected-access
             device._rssi = rssi  # deprecated, will be removed in newer bleak
         else:
