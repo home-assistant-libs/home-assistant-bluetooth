@@ -31,6 +31,7 @@ cdef class BluetoothAdvertisementStream:
     )
     cpdef BluetoothServiceInfoBleak process(
         self,
+        object monotonic_time,
         str address,
         object rssi,
         str local_name,
