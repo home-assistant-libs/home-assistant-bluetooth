@@ -1,11 +1,9 @@
 import cython
 
-
-cdef object NO_RSSI_VALUE
-cdef object monotonic_time_coarse
-
 from .models cimport BluetoothServiceInfoBleak
 
+
+cdef object NO_RSSI_VALUE
 
 cdef object _int
 cdef object _float
