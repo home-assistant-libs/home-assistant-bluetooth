@@ -1,5 +1,5 @@
 """Process a bluetooth advertisement stream."""
-from typing import Any
+from typing import Any, Dict, List, Optional
 
 from bleak.backends.device import BLEDevice
 from bleak.backends.scanner import AdvertisementData
@@ -28,12 +28,12 @@ class BluetoothAdvertisementStream:
         self,
         address: _str,
         rssi: _int,
-        local_name: _str | None,
-        service_uuids: list[str],
-        service_data: dict[str, bytes],
-        manufacturer_data: dict[int, bytes],
-        tx_power: _int | None,
-        details: dict[Any, Any],
+        local_name: Optional[_str],
+        service_uuids: List[str],
+        service_data: Dict[str, bytes],
+        manufacturer_data: Dict[int, bytes],
+        tx_power: Optional[_int],
+        details: Dict[Any, Any],
     ) -> BluetoothServiceInfoBleak:
         """Create a new BluetoothServiceInfoBleak from incoming data and previous discovery."""
         monotonic_time = monotonic_time_coarse()
