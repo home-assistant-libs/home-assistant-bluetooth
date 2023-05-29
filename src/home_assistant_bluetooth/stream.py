@@ -17,7 +17,7 @@ _str = str  # avoid cython conversion since we always want a pystr
 class BluetoothAdvertisementStream:
     """Stream of BluetoothAdvertisement."""
 
-    def __init__(self, connectable: bool, source: str, details: dict[Any, Any]) -> None:
+    def __init__(self, connectable: bool, source: str, details: Dict[Any, Any]) -> None:
         """Initialize a bluetooth service info stream."""
         self._connectable = connectable
         self._source = source
