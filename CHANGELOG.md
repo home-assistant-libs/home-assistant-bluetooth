@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v1.10.1 (2023-07-24)
+
+### Fix
+
+* Update python-semantic-release to fix release process ([#24](https://github.com/home-assistant-libs/home-assistant-bluetooth/issues/24)) ([`8c60e43`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/8c60e4364e351e10844ad7f49a8f7acade1b9cd1))
+
 ## v1.10.0 (2023-04-24)
 ### Feature
 * Optimize from_device_and_advertisement_data ([#21](https://github.com/home-assistant-libs/home-assistant-bluetooth/issues/21)) ([`72bd815`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/72bd815ae2694b8f88d62ff2039ef221daf243c9))
