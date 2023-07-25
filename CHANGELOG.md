@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v1.10.2 (2023-07-25)
+
+### Fix
+
+* Relax type requirements for cython3 ([#25](https://github.com/home-assistant-libs/home-assistant-bluetooth/issues/25)) ([`aee3b26`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/aee3b26eff4648cba67a8801acb2d1627c7942dd))
+
 ## v1.10.1 (2023-07-24)
 
 ### Fix
