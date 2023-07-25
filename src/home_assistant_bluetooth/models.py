@@ -16,6 +16,8 @@ _BluetoothServiceInfoBleakSelfT = TypeVar(
 SOURCE_LOCAL: Final = "local"
 
 _float = float  # avoid cython conversion since we always want a pyfloat
+_str = str  # avoid cython conversion since we always want a pystr
+_int = int  # avoid cython conversion since we always want a pyint
 
 
 class BaseServiceInfo:
@@ -37,13 +39,13 @@ class BluetoothServiceInfo(BaseServiceInfo):
 
     def __init__(
         self,
-        name: Any,  # may be a pyobjc object
-        address: Any,  # may be a pyobjc object
-        rssi: int,
-        manufacturer_data: Dict[int, bytes],
-        service_data: Dict[str, bytes],
-        service_uuids: List[str],
-        source: str,
+        name: _str,  # may be a pyobjc object
+        address: _str,  # may be a pyobjc object
+        rssi: _int,  # may be a pyobjc object
+        manufacturer_data: Dict[_int, bytes],
+        service_data: Dict[_str, bytes],
+        service_uuids: List[_str],
+        source: _str,
     ) -> None:
         """Initialize a bluetooth service info."""
         self.name = name
@@ -106,13 +108,13 @@ class BluetoothServiceInfoBleak(BluetoothServiceInfo):
 
     def __init__(
         self,
-        name: Any,  # may be a pyobjc object
-        address: Any,  # may be a pyobjc object
-        rssi: int,
-        manufacturer_data: Dict[int, bytes],
-        service_data: Dict[str, bytes],
-        service_uuids: List[str],
-        source: str,
+        name: _str,  # may be a pyobjc object
+        address: _str,  # may be a pyobjc object
+        rssi: _int,  # may be a pyobjc object
+        manufacturer_data: Dict[_int, bytes],
+        service_data: Dict[_str, bytes],
+        service_uuids: List[_str],
+        source: _str,
         device: "BLEDevice",
         advertisement: "AdvertisementData",
         connectable: "bool",
