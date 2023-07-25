@@ -30,7 +30,7 @@ python = "^3.9"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.0"
-cython = "^0.29.32"
+cython = ">=3.0"
 setuptools = "^65.5.1"
 wheel = "^0.38.4"
 bleak = ">=0.19.2"
