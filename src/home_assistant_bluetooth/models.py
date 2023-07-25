@@ -41,7 +41,7 @@ class BluetoothServiceInfo(BaseServiceInfo):
         self,
         name: _str,  # may be a pyobjc object
         address: _str,  # may be a pyobjc object
-        rssi: _int,
+        rssi: _int,  # may be a pyobjc object
         manufacturer_data: Dict[_int, bytes],
         service_data: Dict[_str, bytes],
         service_uuids: List[_str],
