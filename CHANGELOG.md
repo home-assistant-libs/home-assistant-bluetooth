@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v1.10.3 (2023-08-27)
+
+### Fix
+
+* Rebuild wheels with cython 3.0.2 ([#26](https://github.com/home-assistant-libs/home-assistant-bluetooth/issues/26)) ([`2d0b3ff`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/2d0b3ff3e1609b1691b078806f2585d08e96ffa3))
+
 ## v1.10.2 (2023-07-25)
 
 ### Fix
