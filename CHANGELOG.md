@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v1.10.4 (2023-10-18)
+
+### Fix
+
+* Reduce size of wheels by excluding generated .c files ([#27](https://github.com/home-assistant-libs/home-assistant-bluetooth/issues/27)) ([`2792c58`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/2792c5858a4db350e37c71cead5be972b6dfbac2))
+
 ## v1.10.3 (2023-08-27)
 
 ### Fix
