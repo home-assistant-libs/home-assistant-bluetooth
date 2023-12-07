@@ -42,9 +42,6 @@ jobs:
           - "3.12"
         os:
           - ubuntu-latest
-        extension:
-          - "skip_cython"
-          - "use_cython"
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
@@ -55,11 +52,7 @@ jobs:
       - uses: snok/install-poetry@v1
       - name: Install Dependencies
         run: |
-          if [ "${{ matrix.extension }}" = "skip_cython" ]; then
-            SKIP_CYTHON=1 poetry install --only=main,dev
-          else
-            poetry install --only=main,dev
-          fi
+          poetry install --only=main,dev
       - name: Test with Pytest
         run: poetry run pytest --cov-report=xml
       - name: Upload coverage to Codecov
