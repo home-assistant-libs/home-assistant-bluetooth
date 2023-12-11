@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v1.11.0 (2023-12-11)
+
+### Feature
+
+* Make home_assistant_bluetooth a wrapper around habluetooth ([#29](https://github.com/home-assistant-libs/home-assistant-bluetooth/issues/29)) ([`e161eaa`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/e161eaad96a036a14b588db0a5df70b6ecf624a7))
+
 ## v1.10.4 (2023-10-18)
 
 ### Fix
