@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v1.11.1 (2024-01-09)
+
+### Fix
+
+* Bump minimum python to 3.11 to fix resolver ([#31](https://github.com/home-assistant-libs/home-assistant-bluetooth/issues/31)) ([`ffacca4`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/ffacca41bc3f7545816dacc8e6da01659609cb24))
+
 ## v1.11.0 (2023-12-11)
 
 ### Feature
