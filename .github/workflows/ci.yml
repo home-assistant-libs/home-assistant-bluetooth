@@ -77,6 +77,11 @@ jobs:
           fetch-depth: 0
           ref: ${{ github.head_ref || github.ref_name }}
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.12
+
       # Dry run of PSR to build the distribution
       - name: Test release
         uses: python-semantic-release/python-semantic-release@v8.7.2
