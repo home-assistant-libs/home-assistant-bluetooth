@@ -32,15 +32,23 @@ wheel = "^0.38.4"
 bleak = ">=0.19.2"
 pytest-cov = "^4.0.0"
 
+
 [tool.semantic_release]
-branch = "main"
-version_toml = "pyproject.toml:tool.poetry.version"
-version_variable = "src/home_assistant_bluetooth/__init__.py:__version__"
+version_toml = ["pyproject.toml:tool.poetry.version"]
+version_variables = [
+    "src/home_assistant_bluetooth/__init__.py:__version__",
+]
 build_command = "pip install poetry && poetry build"
 
 [tool.pytest.ini_options]
 addopts = "-v -Wdefault --cov=home_assistant_bluetooth --cov-report=term-missing:skip-covered"
 pythonpath = ["src"]
+
+[tool.semantic_release.changelog]
+exclude_commit_patterns = [
+    "chore*",
+    "ci*",
+]
 
 [tool.coverage.run]
 branch = true
