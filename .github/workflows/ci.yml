@@ -137,7 +137,7 @@ jobs:
 
       # On main branch: Call PSR to build the distribution
       - name: Release
-        uses: python-semantic-release/python-semantic-release@v8.7.2
+        uses: bluetooth-devices/python-semantic-release@311
         id: release
 
         with:
