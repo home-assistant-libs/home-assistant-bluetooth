@@ -23,7 +23,7 @@ packages = [
 
 [tool.poetry.dependencies]
 python = ">=3.11,<3.13"
-habluetooth = ">=0.11.0"
+habluetooth = ">=3.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.0"
