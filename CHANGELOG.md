@@ -2,6 +2,15 @@
 
 
 
+## v1.12.1 (2024-06-07)
+
+### Fix
+
+* fix: make tests compatible with habluetooth&gt;=3 (#39)
+
+Co-authored-by: J. Nick Koston &lt;nick@koston.org&gt; ([`e73c77d`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/e73c77d40d6bf90f19b7aa4cf6e7cba6ba608e86))
+
+
 ## v1.12.0 (2024-01-11)
 
 ### Feature
