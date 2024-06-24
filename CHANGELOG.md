@@ -2,6 +2,13 @@
 
 
 
+## v1.12.2 (2024-06-24)
+
+### Fix
+
+* fix: fix license classifier (#40) ([`02b5bef`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/02b5bef13e40db62f8fb045fc28c48977eba88a8))
+
+
 ## v1.12.1 (2024-06-07)
 
 ### Fix
