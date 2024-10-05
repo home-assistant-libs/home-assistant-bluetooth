@@ -22,7 +22,7 @@ packages = [
 "Changelog" = "https://github.com/home-assistant-libs/home-assistant-bluetooth/blob/main/CHANGELOG.md"
 
 [tool.poetry.dependencies]
-python = ">=3.11,<3.13"
+python = ">=3.11,<3.14"
 habluetooth = ">=3.0"
 
 [tool.poetry.group.dev.dependencies]
