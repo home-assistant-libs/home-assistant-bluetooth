@@ -2,6 +2,13 @@
 
 
 
+## v1.13.0 (2024-10-05)
+
+### Feature
+
+* feat: add support for Python 3.13 (#41) ([`256feee`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/256feeeaea516fcec00dc0f80754803755c1c12d))
+
+
 ## v1.12.2 (2024-06-24)
 
 ### Fix
