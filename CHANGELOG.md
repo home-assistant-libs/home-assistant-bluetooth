@@ -2,6 +2,13 @@
 
 
 
+## v1.13.1 (2025-02-04)
+
+### Fix
+
+* fix: update poetry to v2 + add license to metadata (#42) ([`6dff3a6`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/6dff3a6d848fa67b8f3f286530ad577c21da60c3))
+
+
 ## v1.13.0 (2024-10-05)
 
 ### Feature
