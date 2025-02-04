@@ -1,25 +1,29 @@
-[tool.poetry]
+[project]
 name = "home-assistant-bluetooth"
 version = "1.13.0"
+license = "Apache-2.0"
 description = "Home Assistant Bluetooth Models and Helpers"
-authors = ["J. Nick Koston <nick@home-assistant.io>"]
+authors = [{ name = "J. Nick Koston", email = "nick@home-assistant.io" }]
 readme = "README.md"
-repository = "https://github.com/home-assistant-libs/home-assistant-bluetooth"
+requires-python = ">=3.11"
+dynamic = ["classifiers", "dependencies"]
+
+[project.urls]
+"Repository" = "https://github.com/home-assistant-libs/home-assistant-bluetooth"
+"Bug Tracker" = "https://github.com/home-assistant-libs/home-assistant-bluetooth/issues"
+"Changelog" = "https://github.com/home-assistant-libs/home-assistant-bluetooth/blob/main/CHANGELOG.md"
+
+[tool.poetry]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
     "Natural Language :: English",
     "Operating System :: OS Independent",
     "Topic :: Software Development :: Libraries",
-    "License :: OSI Approved :: Apache Software License",
 ]
 packages = [
     { include = "home_assistant_bluetooth", from = "src" },
 ]
-
-[tool.poetry.urls]
-"Bug Tracker" = "https://github.com/home-assistant-libs/home-assistant-bluetooth/issues"
-"Changelog" = "https://github.com/home-assistant-libs/home-assistant-bluetooth/blob/main/CHANGELOG.md"
 
 [tool.poetry.dependencies]
 python = ">=3.11,<3.14"
@@ -33,10 +37,10 @@ bleak = ">=0.19.2"
 pytest-cov = "^4.0.0"
 
 [tool.poetry.group.test_build.dependencies]
-twine = "^4.0.2"
+twine = "^6.1.0"
 
 [tool.semantic_release]
-version_toml = ["pyproject.toml:tool.poetry.version"]
+version_toml = ["pyproject.toml:project.version"]
 version_variables = [
     "src/home_assistant_bluetooth/__init__.py:__version__",
 ]
@@ -86,5 +90,5 @@ module = "tests.*"
 allow_untyped_defs = true
 
 [build-system]
-requires = ['setuptools>=65.4.1', "poetry-core>=1.0.0"]
+requires = ['setuptools>=65.4.1', "poetry-core>=2.0.0"]
 build-backend = "poetry.core.masonry.api"
