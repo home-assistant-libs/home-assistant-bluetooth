@@ -37,7 +37,7 @@ bleak = ">=0.19.2"
 pytest-cov = "^4.0.0"
 
 [tool.poetry.group.test_build.dependencies]
-twine = "^4.0.2"
+twine = "^6.1.0"
 
 [tool.semantic_release]
 version_toml = ["pyproject.toml:project.version"]
