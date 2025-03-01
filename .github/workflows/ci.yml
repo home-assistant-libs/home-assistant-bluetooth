@@ -86,7 +86,7 @@ jobs:
 
       # Dry run of PSR to build the distribution
       - name: Test release
-        uses: python-semantic-release/python-semantic-release@v9.17.0
+        uses: python-semantic-release/python-semantic-release@v9.21.0
         with:
           root_options: --noop
 
