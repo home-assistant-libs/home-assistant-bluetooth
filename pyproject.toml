@@ -32,7 +32,7 @@ habluetooth = ">=3.0"
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3"
 setuptools = "^80.0.0"
-wheel = "^0.38.4"
+wheel = "^0.45.1"
 bleak = ">=0.19.2"
 pytest-cov = "^4.0.0"
 
