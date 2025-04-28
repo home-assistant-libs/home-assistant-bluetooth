@@ -89,6 +89,7 @@ def test_model_from_scanner():
         "source": "local",
         "time": now,
         "tx_power": -127,
+        "raw": None,
     }
 
 
@@ -135,6 +136,7 @@ def test_construct_service_info_bleak():
         "source": "local",
         "time": now,
         "tx_power": None,
+        "raw": None,
     }
 
 
@@ -169,6 +171,7 @@ def test_from_device_and_advertisement_data():
         "source": "local",
         "time": now_monotonic,
         "tx_power": -127,
+        "raw": None,
     }
 
 
@@ -229,4 +232,5 @@ def test_pyobjc_compat():
         "source": "local",
         "time": now,
         "tx_power": None,
+        "raw": None,
     }
