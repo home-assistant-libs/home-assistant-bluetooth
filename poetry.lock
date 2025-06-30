@@ -44,31 +44,30 @@ testing = ["jaraco.test", "pytest (!=8.0.*)", "pytest (>=6,!=8.1.*)", "pytest-ch
 
 [[package]]
 name = "bleak"
-version = "0.22.3"
+version = "1.0.0"
 description = "Bluetooth Low Energy platform Agnostic Klient"
 optional = false
-python-versions = "<3.14,>=3.8"
+python-versions = ">=3.9"
 groups = ["main", "dev"]
 files = [
-    {file = "bleak-0.22.3-py3-none-any.whl", hash = "sha256:1e62a9f5e0c184826e6c906e341d8aca53793e4596eeaf4e0b191e7aca5c461c"},
-    {file = "bleak-0.22.3.tar.gz", hash = "sha256:3149c3c19657e457727aa53d9d6aeb89658495822cd240afd8aeca4dd09c045c"},
+    {file = "bleak-1.0.0-py3-none-any.whl", hash = "sha256:ce5e3c04b09f9b5e1df1c54f5f3fca12faec6141ba2ed0941656f825fffb885f"},
+    {file = "bleak-1.0.0.tar.gz", hash = "sha256:b319adbedbe900426389024472fba929ec719da187089c98710f9d0aa05a8e6a"},
 ]
 
 [package.dependencies]
-bleak-winrt = {version = ">=1.2.0,<2.0.0", markers = "platform_system == \"Windows\" and python_version < \"3.12\""}
-dbus-fast = {version = ">=1.83.0,<3", markers = "platform_system == \"Linux\""}
-pyobjc-core = {version = ">=10.3,<11.0", markers = "platform_system == \"Darwin\""}
-pyobjc-framework-CoreBluetooth = {version = ">=10.3,<11.0", markers = "platform_system == \"Darwin\""}
-pyobjc-framework-libdispatch = {version = ">=10.3,<11.0", markers = "platform_system == \"Darwin\""}
+dbus-fast = {version = ">=1.83.0", markers = "platform_system == \"Linux\""}
+pyobjc-core = {version = ">=10.3", markers = "platform_system == \"Darwin\""}
+pyobjc-framework-CoreBluetooth = {version = ">=10.3", markers = "platform_system == \"Darwin\""}
+pyobjc-framework-libdispatch = {version = ">=10.3", markers = "platform_system == \"Darwin\""}
 typing-extensions = {version = ">=4.7.0", markers = "python_version < \"3.12\""}
-winrt-runtime = {version = ">=2,<3", markers = "platform_system == \"Windows\" and python_version >= \"3.12\""}
-"winrt-Windows.Devices.Bluetooth" = {version = ">=2,<3", markers = "platform_system == \"Windows\" and python_version >= \"3.12\""}
-"winrt-Windows.Devices.Bluetooth.Advertisement" = {version = ">=2,<3", markers = "platform_system == \"Windows\" and python_version >= \"3.12\""}
-"winrt-Windows.Devices.Bluetooth.GenericAttributeProfile" = {version = ">=2,<3", markers = "platform_system == \"Windows\" and python_version >= \"3.12\""}
-"winrt-Windows.Devices.Enumeration" = {version = ">=2,<3", markers = "platform_system == \"Windows\" and python_version >= \"3.12\""}
-"winrt-Windows.Foundation" = {version = ">=2,<3", markers = "platform_system == \"Windows\" and python_version >= \"3.12\""}
-"winrt-Windows.Foundation.Collections" = {version = ">=2,<3", markers = "platform_system == \"Windows\" and python_version >= \"3.12\""}
-"winrt-Windows.Storage.Streams" = {version = ">=2,<3", markers = "platform_system == \"Windows\" and python_version >= \"3.12\""}
+winrt-runtime = {version = ">=3.1", markers = "platform_system == \"Windows\""}
+"winrt-Windows.Devices.Bluetooth" = {version = ">=3.1", markers = "platform_system == \"Windows\""}
+"winrt-Windows.Devices.Bluetooth.Advertisement" = {version = ">=3.1", markers = "platform_system == \"Windows\""}
+"winrt-Windows.Devices.Bluetooth.GenericAttributeProfile" = {version = ">=3.1", markers = "platform_system == \"Windows\""}
+"winrt-Windows.Devices.Enumeration" = {version = ">=3.1", markers = "platform_system == \"Windows\""}
+"winrt-Windows.Foundation" = {version = ">=3.1", markers = "platform_system == \"Windows\""}
+"winrt-Windows.Foundation.Collections" = {version = ">=3.1", markers = "platform_system == \"Windows\""}
+"winrt-Windows.Storage.Streams" = {version = ">=3.1", markers = "platform_system == \"Windows\""}
 
 [[package]]
 name = "bleak-retry-connector"
@@ -86,28 +85,6 @@ files = [
 bleak = {version = ">=0.21.0", markers = "python_version >= \"3.10\" and python_version < \"3.14\""}
 bluetooth-adapters = {version = ">=0.15.2", markers = "python_version >= \"3.10\" and python_version < \"3.14\" and platform_system == \"Linux\""}
 dbus-fast = {version = ">=1.14.0", markers = "platform_system == \"Linux\""}
-
-[[package]]
-name = "bleak-winrt"
-version = "1.2.0"
-description = "Python WinRT bindings for Bleak"
-optional = false
-python-versions = "*"
-groups = ["main", "dev"]
-markers = "platform_system == \"Windows\" and python_version < \"3.12\""
-files = [
-    {file = "bleak-winrt-1.2.0.tar.gz", hash = "sha256:0577d070251b9354fc6c45ffac57e39341ebb08ead014b1bdbd43e211d2ce1d6"},
-    {file = "bleak_winrt-1.2.0-cp310-cp310-win32.whl", hash = "sha256:a2ae3054d6843ae0cfd3b94c83293a1dfd5804393977dd69bde91cb5099fc47c"},
-    {file = "bleak_winrt-1.2.0-cp310-cp310-win_amd64.whl", hash = "sha256:677df51dc825c6657b3ae94f00bd09b8ab88422b40d6a7bdbf7972a63bc44e9a"},
-    {file = "bleak_winrt-1.2.0-cp311-cp311-win32.whl", hash = "sha256:9449cdb942f22c9892bc1ada99e2ccce9bea8a8af1493e81fefb6de2cb3a7b80"},
-    {file = "bleak_winrt-1.2.0-cp311-cp311-win_amd64.whl", hash = "sha256:98c1b5a6a6c431ac7f76aa4285b752fe14a1c626bd8a1dfa56f66173ff120bee"},
-    {file = "bleak_winrt-1.2.0-cp37-cp37m-win32.whl", hash = "sha256:623ac511696e1f58d83cb9c431e32f613395f2199b3db7f125a3d872cab968a4"},
-    {file = "bleak_winrt-1.2.0-cp37-cp37m-win_amd64.whl", hash = "sha256:13ab06dec55469cf51a2c187be7b630a7a2922e1ea9ac1998135974a7239b1e3"},
-    {file = "bleak_winrt-1.2.0-cp38-cp38-win32.whl", hash = "sha256:5a36ff8cd53068c01a795a75d2c13054ddc5f99ce6de62c1a97cd343fc4d0727"},
-    {file = "bleak_winrt-1.2.0-cp38-cp38-win_amd64.whl", hash = "sha256:810c00726653a962256b7acd8edf81ab9e4a3c66e936a342ce4aec7dbd3a7263"},
-    {file = "bleak_winrt-1.2.0-cp39-cp39-win32.whl", hash = "sha256:dd740047a08925bde54bec357391fcee595d7b8ca0c74c87170a5cbc3f97aa0a"},
-    {file = "bleak_winrt-1.2.0-cp39-cp39-win_amd64.whl", hash = "sha256:63130c11acfe75c504a79c01f9919e87f009f5e742bfc7b7a5c2a9c72bf591a7"},
-]
 
 [[package]]
 name = "bluetooth-adapters"
@@ -1295,15 +1272,15 @@ keyring = ["keyring (>=15.1)"]
 
 [[package]]
 name = "typing-extensions"
-version = "4.12.1"
-description = "Backported and Experimental Type Hints for Python 3.8+"
+version = "4.14.0"
+description = "Backported and Experimental Type Hints for Python 3.9+"
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 groups = ["main", "dev"]
-markers = "python_version < \"3.12\""
+markers = "python_version < \"3.12\" or platform_system == \"Windows\""
 files = [
-    {file = "typing_extensions-4.12.1-py3-none-any.whl", hash = "sha256:6024b58b69089e5a89c347397254e35f1bf02a907728ec7fee9bf0fe837d203a"},
-    {file = "typing_extensions-4.12.1.tar.gz", hash = "sha256:915f5e35ff76f56588223f15fdd5938f9a1cf9195c0de25130c627e4d597f6d1"},
+    {file = "typing_extensions-4.14.0-py3-none-any.whl", hash = "sha256:a1514509136dd0b477638fc68d6a91497af5076466ad0fa6c338e44e359944af"},
+    {file = "typing_extensions-4.14.0.tar.gz", hash = "sha256:8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"},
 ]
 
 [[package]]
@@ -1365,261 +1342,264 @@ test = ["pytest (>=6.0.0)", "setuptools (>=65)"]
 
 [[package]]
 name = "winrt-runtime"
-version = "2.2.0"
+version = "3.2.1"
 description = "Python projection of Windows Runtime (WinRT) APIs"
 optional = false
-python-versions = "<3.14,>=3.9"
+python-versions = ">=3.9"
 groups = ["main", "dev"]
-markers = "platform_system == \"Windows\" and python_version >= \"3.12\""
+markers = "platform_system == \"Windows\""
 files = [
-    {file = "winrt_runtime-2.2.0-cp310-cp310-win32.whl", hash = "sha256:ab034330d6b64ce93683bdc14d4f3f83dfafbf1f72b45893505f7d684e5e7fe1"},
-    {file = "winrt_runtime-2.2.0-cp310-cp310-win_amd64.whl", hash = "sha256:ad9927a1838dea47ceb2d773c0269242bcee7cb5379ed801547788ab435da502"},
-    {file = "winrt_runtime-2.2.0-cp310-cp310-win_arm64.whl", hash = "sha256:87745ae54d054957a99c70875c1ac3c89cca258ed06836ae308fbbb7dda4ef61"},
-    {file = "winrt_runtime-2.2.0-cp311-cp311-win32.whl", hash = "sha256:7ee2397934c1c4a090f9d889292def90b8f673dc1d320f1f07931ad1cb6e49bf"},
-    {file = "winrt_runtime-2.2.0-cp311-cp311-win_amd64.whl", hash = "sha256:f110b0f451b514cf09c4fa0e73bab54d4b598c3092df9dd87940403998e81f30"},
-    {file = "winrt_runtime-2.2.0-cp311-cp311-win_arm64.whl", hash = "sha256:27606e7a393a26e484f03db699c4d7c206d180a3736a6cd68fba3b3896e364a4"},
-    {file = "winrt_runtime-2.2.0-cp312-cp312-win32.whl", hash = "sha256:5a769bfb4e264b7fd306027da90c6e4e615667e9afdd8e5d712bc45bdabaf0d2"},
-    {file = "winrt_runtime-2.2.0-cp312-cp312-win_amd64.whl", hash = "sha256:ef30ea7446a1e37660265b76e586fcffc0e83a859b7729141cdf68cbedf808a8"},
-    {file = "winrt_runtime-2.2.0-cp312-cp312-win_arm64.whl", hash = "sha256:d8f6338fb8433b4df900c8f173959a5ae9ac63b0b20faddb338e76a6e9391bc9"},
-    {file = "winrt_runtime-2.2.0-cp313-cp313-win32.whl", hash = "sha256:6d8c1122158edc96cac956a5ab62bc06a56e088bdf83d0993a455216b3fd1cac"},
-    {file = "winrt_runtime-2.2.0-cp313-cp313-win_amd64.whl", hash = "sha256:76b2dc846e6802375113c9ce9e7fcc4292926bd788445f34d404bae72d2b4f4b"},
-    {file = "winrt_runtime-2.2.0-cp313-cp313-win_arm64.whl", hash = "sha256:faacc05577573702cb135e7da4d619f4990c768063dc869362f13d856a0738e3"},
-    {file = "winrt_runtime-2.2.0-cp39-cp39-win32.whl", hash = "sha256:f00334e3304a43e1742514bed2dc736a9242e831676f605fdfb5d62932714b18"},
-    {file = "winrt_runtime-2.2.0-cp39-cp39-win_amd64.whl", hash = "sha256:ef1b2dc31576d686cce088a349b539fc0f47bdf2f66fb8ea63a6964dc069d00d"},
-    {file = "winrt_runtime-2.2.0-cp39-cp39-win_arm64.whl", hash = "sha256:1c9e8a609cf00acc426eae2ed4ad866991a0f33f196ec9dc69af95ae43b4373b"},
-    {file = "winrt_runtime-2.2.0.tar.gz", hash = "sha256:37a673b295ebd5f6dc5a3b42fd52c8e4589ca3e605deb54c26d0877d2575ec85"},
+    {file = "winrt_runtime-3.2.1-cp310-cp310-win32.whl", hash = "sha256:25a2d1e2b45423742319f7e10fa8ca2e7063f01284b6e85e99d805c4b50bbfb3"},
+    {file = "winrt_runtime-3.2.1-cp310-cp310-win_amd64.whl", hash = "sha256:dc81d5fb736bf1ddecf743928622253dce4d0aac9a57faad776d7a3834e13257"},
+    {file = "winrt_runtime-3.2.1-cp310-cp310-win_arm64.whl", hash = "sha256:363f584b1e9fcb601e3e178636d8877e6f0537ac3c96ce4a96f06066f8ff0eae"},
+    {file = "winrt_runtime-3.2.1-cp311-cp311-win32.whl", hash = "sha256:9e9b64f1ba631cc4b9fe60b8ff16fef3f32c7ce2fcc84735a63129ff8b15c022"},
+    {file = "winrt_runtime-3.2.1-cp311-cp311-win_amd64.whl", hash = "sha256:c0a9046ae416808420a358c51705af8ae100acd40bc578be57ddfdd51cbb0f9c"},
+    {file = "winrt_runtime-3.2.1-cp311-cp311-win_arm64.whl", hash = "sha256:e94f3cb40ea2d723c44c82c16d715c03c6b3bd977d135b49535fdd5415fd9130"},
+    {file = "winrt_runtime-3.2.1-cp312-cp312-win32.whl", hash = "sha256:762b3d972a2f7037f7db3acbaf379dd6d8f6cda505f71f66c6b425d1a1eae2f1"},
+    {file = "winrt_runtime-3.2.1-cp312-cp312-win_amd64.whl", hash = "sha256:06510db215d4f0dc45c00fbb1251c6544e91742a0ad928011db33b30677e1576"},
+    {file = "winrt_runtime-3.2.1-cp312-cp312-win_arm64.whl", hash = "sha256:14562c29a087ccad38e379e585fef333e5c94166c807bdde67b508a6261aa195"},
+    {file = "winrt_runtime-3.2.1-cp313-cp313-win32.whl", hash = "sha256:44e2733bc709b76c554aee6c7fe079443b8306b2e661e82eecfebe8b9d71e4d1"},
+    {file = "winrt_runtime-3.2.1-cp313-cp313-win_amd64.whl", hash = "sha256:3c1fdcaeedeb2920dc3b9039db64089a6093cad2be56a3e64acc938849245a6d"},
+    {file = "winrt_runtime-3.2.1-cp313-cp313-win_arm64.whl", hash = "sha256:28f3dab083412625ff4d2b46e81246932e6bebddf67bea7f05e01712f54e6159"},
+    {file = "winrt_runtime-3.2.1-cp39-cp39-win32.whl", hash = "sha256:07c0cb4a53a4448c2cb7597b62ae8c94343c289eeebd8f83f946eb2c817bde01"},
+    {file = "winrt_runtime-3.2.1-cp39-cp39-win_amd64.whl", hash = "sha256:1856325ca3354b45e0789cf279be9a882134085d34214946db76110d98391efa"},
+    {file = "winrt_runtime-3.2.1-cp39-cp39-win_arm64.whl", hash = "sha256:cf237858de1d62e4c9b132c66b52028a7a3e8534e8ab90b0e29a68f24f7be39d"},
+    {file = "winrt_runtime-3.2.1.tar.gz", hash = "sha256:c8dca19e12b234ae6c3dadf1a4d0761b51e708457492c13beb666556958801ea"},
 ]
+
+[package.dependencies]
+typing_extensions = ">=4.12.2"
 
 [[package]]
 name = "winrt-windows-devices-bluetooth"
-version = "2.2.0"
+version = "3.2.1"
 description = "Python projection of Windows Runtime (WinRT) APIs"
 optional = false
-python-versions = "<3.14,>=3.9"
+python-versions = ">=3.9"
 groups = ["main", "dev"]
-markers = "platform_system == \"Windows\" and python_version >= \"3.12\""
+markers = "platform_system == \"Windows\""
 files = [
-    {file = "winrt_Windows.Devices.Bluetooth-2.2.0-cp310-cp310-win32.whl", hash = "sha256:f3ced50ded44f74ac901d05f99cdd0bdf78e3a939a42d3cd80c33e510b4b8569"},
-    {file = "winrt_Windows.Devices.Bluetooth-2.2.0-cp310-cp310-win_amd64.whl", hash = "sha256:241a8f0ab06f6178d2e5757e7bc1f6c37e00e65ab6858ae676a1723a6445fa92"},
-    {file = "winrt_Windows.Devices.Bluetooth-2.2.0-cp310-cp310-win_arm64.whl", hash = "sha256:3abefa3d11b4af9d9731d9d1a71083b1ef301fa30f7006a6c1f341426dd6d733"},
-    {file = "winrt_Windows.Devices.Bluetooth-2.2.0-cp311-cp311-win32.whl", hash = "sha256:4215c45595201f5f43f98b1e8911ff5cb0b303fe3298fa4d91a7bdc6d5523853"},
-    {file = "winrt_Windows.Devices.Bluetooth-2.2.0-cp311-cp311-win_amd64.whl", hash = "sha256:5cda69842b30bf56b10ea1a747d01b295abc910d9ccc10e9c97e8f554cd536e0"},
-    {file = "winrt_Windows.Devices.Bluetooth-2.2.0-cp311-cp311-win_arm64.whl", hash = "sha256:f7c12a28cd04eb05bacc73d8025ba135a929b9d511d21f20d0072d735853e8a2"},
-    {file = "winrt_Windows.Devices.Bluetooth-2.2.0-cp312-cp312-win32.whl", hash = "sha256:c929ea5215942fb26081b26aae094a2f70551cc0a59499ab2c9ea1f6d6b991f9"},
-    {file = "winrt_Windows.Devices.Bluetooth-2.2.0-cp312-cp312-win_amd64.whl", hash = "sha256:c1444e2031f3e69990d412b9edf75413a09280744bbc088a6b0760d94d356d4b"},
-    {file = "winrt_Windows.Devices.Bluetooth-2.2.0-cp312-cp312-win_arm64.whl", hash = "sha256:f2d06ce6c43e37ea09ac073805ac6f9f62ae10ce552c90ae6eca978accd3f434"},
-    {file = "winrt_Windows.Devices.Bluetooth-2.2.0-cp313-cp313-win32.whl", hash = "sha256:b44a45c60f1d9fa288a12119991060ef7998793c6b93baa84308cfb090492788"},
-    {file = "winrt_Windows.Devices.Bluetooth-2.2.0-cp313-cp313-win_amd64.whl", hash = "sha256:fb698a55d06dc34643437b370c35fa064bd28762561e880715a30463c359fa44"},
-    {file = "winrt_Windows.Devices.Bluetooth-2.2.0-cp313-cp313-win_arm64.whl", hash = "sha256:cb350bfe21bab3573c9cd84006efad9c46a395a2943ab474105aed8b21bb88a4"},
-    {file = "winrt_Windows.Devices.Bluetooth-2.2.0-cp39-cp39-win32.whl", hash = "sha256:7ee056e4c1a542352bcacbb95f898b7ae2739b3e0a63f7ab1290a7e2569f6393"},
-    {file = "winrt_Windows.Devices.Bluetooth-2.2.0-cp39-cp39-win_amd64.whl", hash = "sha256:f919cee2a49c3c48d1ef9dd84b419a6438000ef43bc35a7a349291c162cab4f3"},
-    {file = "winrt_Windows.Devices.Bluetooth-2.2.0-cp39-cp39-win_arm64.whl", hash = "sha256:f223af93675f6f92ab87de08c6d413ecc8ab19014b7438893437c42dcb2b0969"},
-    {file = "winrt_windows_devices_bluetooth-2.2.0.tar.gz", hash = "sha256:95a5cf9c1e915557a28a4f017ea1ff7357039ee23526258f9cc161cf080b4577"},
+    {file = "winrt_windows_devices_bluetooth-3.2.1-cp310-cp310-win32.whl", hash = "sha256:49489351037094a088a08fbdf0f99c94e3299b574edb211f717c4c727770af78"},
+    {file = "winrt_windows_devices_bluetooth-3.2.1-cp310-cp310-win_amd64.whl", hash = "sha256:20f6a21029034c18ea6a6b6df399671813b071102a0d6d8355bb78cf4f547cdb"},
+    {file = "winrt_windows_devices_bluetooth-3.2.1-cp310-cp310-win_arm64.whl", hash = "sha256:69c523814eab795bc1bf913292309cb1025ef0a67d5fc33863a98788995e551d"},
+    {file = "winrt_windows_devices_bluetooth-3.2.1-cp311-cp311-win32.whl", hash = "sha256:f4082a00b834c1e34b961e0612f3e581356bdb38c5798bd6842f88ec02e5152b"},
+    {file = "winrt_windows_devices_bluetooth-3.2.1-cp311-cp311-win_amd64.whl", hash = "sha256:44277a3f2cc5ac32ce9b4b2d96c5c5f601d394ac5f02cc71bcd551f738660e2d"},
+    {file = "winrt_windows_devices_bluetooth-3.2.1-cp311-cp311-win_arm64.whl", hash = "sha256:0803a417403a7d225316b9b0c4fe3f8446579d6a22f2f729a2c21f4befc74a80"},
+    {file = "winrt_windows_devices_bluetooth-3.2.1-cp312-cp312-win32.whl", hash = "sha256:18c833ec49e7076127463679e85efc59f61785ade0dc185c852586b21be1f31c"},
+    {file = "winrt_windows_devices_bluetooth-3.2.1-cp312-cp312-win_amd64.whl", hash = "sha256:9b6702c462b216c91e32388023a74d0f87210cef6fd5d93b7191e9427ce2faca"},
+    {file = "winrt_windows_devices_bluetooth-3.2.1-cp312-cp312-win_arm64.whl", hash = "sha256:419fd1078c7749119f6b4bbf6be4e586e03a0ed544c03b83178f1d85f1b3d148"},
+    {file = "winrt_windows_devices_bluetooth-3.2.1-cp313-cp313-win32.whl", hash = "sha256:12b0a16fb36ce0b42243ca81f22a6b53fbb344ed7ea07a6eeec294604f0505e4"},
+    {file = "winrt_windows_devices_bluetooth-3.2.1-cp313-cp313-win_amd64.whl", hash = "sha256:6703dfbe444ee22426738830fb305c96a728ea9ccce905acfdf811d81045fdb3"},
+    {file = "winrt_windows_devices_bluetooth-3.2.1-cp313-cp313-win_arm64.whl", hash = "sha256:2cf8a0bfc9103e32dc7237af15f84be06c791f37711984abdca761f6318bbdb2"},
+    {file = "winrt_windows_devices_bluetooth-3.2.1-cp39-cp39-win32.whl", hash = "sha256:32fc355bfdc5d6b3b1875df16eaf12f9b9fc0445e01177833c27d9a4fc0d50b6"},
+    {file = "winrt_windows_devices_bluetooth-3.2.1-cp39-cp39-win_amd64.whl", hash = "sha256:b886ef1fc0ed49163ae6c2422dd5cb8dd4709da7972af26c8627e211872818d0"},
+    {file = "winrt_windows_devices_bluetooth-3.2.1-cp39-cp39-win_arm64.whl", hash = "sha256:8643afa53f9fb8fe3b05967227f86f0c8e1d7b822289e60a848c6368acc977d2"},
+    {file = "winrt_windows_devices_bluetooth-3.2.1.tar.gz", hash = "sha256:db496d2d92742006d5a052468fc355bf7bb49e795341d695c374746113d74505"},
 ]
 
 [package.dependencies]
-winrt-runtime = "2.2.0"
+winrt-runtime = ">=3.2.1.0,<3.3.0.0"
 
 [package.extras]
-all = ["winrt-Windows.Devices.Bluetooth.GenericAttributeProfile[all] (==2.2.0)", "winrt-Windows.Devices.Bluetooth.Rfcomm[all] (==2.2.0)", "winrt-Windows.Devices.Enumeration[all] (==2.2.0)", "winrt-Windows.Devices.Radios[all] (==2.2.0)", "winrt-Windows.Foundation.Collections[all] (==2.2.0)", "winrt-Windows.Foundation[all] (==2.2.0)", "winrt-Windows.Networking[all] (==2.2.0)", "winrt-Windows.Storage.Streams[all] (==2.2.0)"]
+all = ["winrt-Windows.Devices.Bluetooth.GenericAttributeProfile[all] (>=3.2.1.0,<3.3.0.0)", "winrt-Windows.Devices.Bluetooth.Rfcomm[all] (>=3.2.1.0,<3.3.0.0)", "winrt-Windows.Devices.Enumeration[all] (>=3.2.1.0,<3.3.0.0)", "winrt-Windows.Devices.Radios[all] (>=3.2.1.0,<3.3.0.0)", "winrt-Windows.Foundation.Collections[all] (>=3.2.1.0,<3.3.0.0)", "winrt-Windows.Foundation[all] (>=3.2.1.0,<3.3.0.0)", "winrt-Windows.Networking[all] (>=3.2.1.0,<3.3.0.0)", "winrt-Windows.Storage.Streams[all] (>=3.2.1.0,<3.3.0.0)"]
 
 [[package]]
 name = "winrt-windows-devices-bluetooth-advertisement"
-version = "2.2.0"
+version = "3.2.1"
 description = "Python projection of Windows Runtime (WinRT) APIs"
 optional = false
-python-versions = "<3.14,>=3.9"
+python-versions = ">=3.9"
 groups = ["main", "dev"]
-markers = "platform_system == \"Windows\" and python_version >= \"3.12\""
+markers = "platform_system == \"Windows\""
 files = [
-    {file = "winrt_Windows.Devices.Bluetooth.Advertisement-2.2.0-cp310-cp310-win32.whl", hash = "sha256:3d5fddffd5f6eeafebe1bcbaa096b8962c28c9236490f6f887ac2ed3ee4ed62c"},
-    {file = "winrt_Windows.Devices.Bluetooth.Advertisement-2.2.0-cp310-cp310-win_amd64.whl", hash = "sha256:f1cb5a835dc3574b0c47a613fa49eeeccdd9aa5801d43d7b7606ad5ce3614a54"},
-    {file = "winrt_Windows.Devices.Bluetooth.Advertisement-2.2.0-cp310-cp310-win_arm64.whl", hash = "sha256:9c2530c4972671ffb8a6e54621490c6c7a8c13b4d57e6474e05b62f211bbaab6"},
-    {file = "winrt_Windows.Devices.Bluetooth.Advertisement-2.2.0-cp311-cp311-win32.whl", hash = "sha256:28b36b3be137bdb6bdaad0d7a620c1a8b156e3c2737d08b9827af02b3c9d52bf"},
-    {file = "winrt_Windows.Devices.Bluetooth.Advertisement-2.2.0-cp311-cp311-win_amd64.whl", hash = "sha256:52948f17ecfc70c58b07077191985712172b518b5e3f4874e5708d175b7ace72"},
-    {file = "winrt_Windows.Devices.Bluetooth.Advertisement-2.2.0-cp311-cp311-win_arm64.whl", hash = "sha256:338296b76c01840c1dc10799a405b76460346bf677af11e6ab324311fd58e1a9"},
-    {file = "winrt_Windows.Devices.Bluetooth.Advertisement-2.2.0-cp312-cp312-win32.whl", hash = "sha256:4c14f48ac1886a3d374ee511467f0a61f26d88a321bf97d47429859730ee9248"},
-    {file = "winrt_Windows.Devices.Bluetooth.Advertisement-2.2.0-cp312-cp312-win_amd64.whl", hash = "sha256:89a658e901de88373e6a17a98273b8555e3f80563f2cc362b7f75817a7f9d915"},
-    {file = "winrt_Windows.Devices.Bluetooth.Advertisement-2.2.0-cp312-cp312-win_arm64.whl", hash = "sha256:3b2b1b34f37a3329cf72793a089dd13fefd7b582c3e3a53a69a1353fd18940a3"},
-    {file = "winrt_Windows.Devices.Bluetooth.Advertisement-2.2.0-cp313-cp313-win32.whl", hash = "sha256:1b2d42c3d90b3e985954196b9a9e4007e22ff468d3d020c5a4acdee2821018fe"},
-    {file = "winrt_Windows.Devices.Bluetooth.Advertisement-2.2.0-cp313-cp313-win_amd64.whl", hash = "sha256:8d964c599670ea21b97afe2435e7638ca26e04936aacc0550474b6ec3fea988f"},
-    {file = "winrt_Windows.Devices.Bluetooth.Advertisement-2.2.0-cp313-cp313-win_arm64.whl", hash = "sha256:add4f459f0a02d1da38d579c3af887cfc3fe54f7782d779cf4ffe7f24404f1ff"},
-    {file = "winrt_Windows.Devices.Bluetooth.Advertisement-2.2.0-cp39-cp39-win32.whl", hash = "sha256:756aeb2408bd59983a34da7f2552690d9e1071ad75de96aff15b365e1137b157"},
-    {file = "winrt_Windows.Devices.Bluetooth.Advertisement-2.2.0-cp39-cp39-win_amd64.whl", hash = "sha256:9d19ef4cb00f58e10bdd0a2eb497eabecb3a2a5586fdcacebae6f0009585f3f1"},
-    {file = "winrt_Windows.Devices.Bluetooth.Advertisement-2.2.0-cp39-cp39-win_arm64.whl", hash = "sha256:1008641262bbbe130b6fcda76b9c890327aa416ef5b240a6a2cbb895d37dd3c7"},
-    {file = "winrt_windows_devices_bluetooth_advertisement-2.2.0.tar.gz", hash = "sha256:bcbf246994b60e5de4bea9eb3fa01c5d6452200789004d14df70b27be9aa4775"},
+    {file = "winrt_windows_devices_bluetooth_advertisement-3.2.1-cp310-cp310-win32.whl", hash = "sha256:a758c5f81a98cc38347fdfb024ce62720969480e8c5b98e402b89d2b09b32866"},
+    {file = "winrt_windows_devices_bluetooth_advertisement-3.2.1-cp310-cp310-win_amd64.whl", hash = "sha256:f982ef72e729ddd60cdb975293866e84bb838798828933012a57ee4bf12b0ea1"},
+    {file = "winrt_windows_devices_bluetooth_advertisement-3.2.1-cp310-cp310-win_arm64.whl", hash = "sha256:e88a72e1e09c7ccc899a9e6d2ab3fc0f43b5dd4509bcc49ec4abf65b55ab015f"},
+    {file = "winrt_windows_devices_bluetooth_advertisement-3.2.1-cp311-cp311-win32.whl", hash = "sha256:fe17c2cf63284646622e8b2742b064bf7970bbf53cfab02062136c67fa6b06c9"},
+    {file = "winrt_windows_devices_bluetooth_advertisement-3.2.1-cp311-cp311-win_amd64.whl", hash = "sha256:78e99dd48b4d89b71b7778c5085fdba64e754dd3ebc54fd09c200fe5222c6e09"},
+    {file = "winrt_windows_devices_bluetooth_advertisement-3.2.1-cp311-cp311-win_arm64.whl", hash = "sha256:6d5d2295474deab444fc4311580c725a2ca8a814b0f3344d0779828891d75401"},
+    {file = "winrt_windows_devices_bluetooth_advertisement-3.2.1-cp312-cp312-win32.whl", hash = "sha256:901933cc40de5eb7e5f4188897c899dd0b0f577cb2c13eab1a63c7dfe89b08c4"},
+    {file = "winrt_windows_devices_bluetooth_advertisement-3.2.1-cp312-cp312-win_amd64.whl", hash = "sha256:e6c66e7d4f4ca86d2c801d30efd2b9673247b59a2b4c365d9e11650303d68d89"},
+    {file = "winrt_windows_devices_bluetooth_advertisement-3.2.1-cp312-cp312-win_arm64.whl", hash = "sha256:447d19defd8982d39944642eb7ebe89e4e20259ec9734116cf88879fb2c514ff"},
+    {file = "winrt_windows_devices_bluetooth_advertisement-3.2.1-cp313-cp313-win32.whl", hash = "sha256:4122348ea525a914e85615647a0b54ae8b2f42f92cdbf89c5a12eea53ef6ed90"},
+    {file = "winrt_windows_devices_bluetooth_advertisement-3.2.1-cp313-cp313-win_amd64.whl", hash = "sha256:b66410c04b8dae634a7e4b615c3b7f8adda9c7d4d6902bcad5b253da1a684943"},
+    {file = "winrt_windows_devices_bluetooth_advertisement-3.2.1-cp313-cp313-win_arm64.whl", hash = "sha256:07af19b1d252ddb9dd3eb2965118bc2b7cabff4dda6e499341b765e5038ca61d"},
+    {file = "winrt_windows_devices_bluetooth_advertisement-3.2.1-cp39-cp39-win32.whl", hash = "sha256:6c4747d2e5b0e2ef24e9b84a848cf8fc50fb5b268a2086b5ee8680206d1e0197"},
+    {file = "winrt_windows_devices_bluetooth_advertisement-3.2.1-cp39-cp39-win_amd64.whl", hash = "sha256:18d4c5d8b80ee2d29cc13c2fc1353fdb3c0f620c8083701c9b9ecf5e6c503c8d"},
+    {file = "winrt_windows_devices_bluetooth_advertisement-3.2.1-cp39-cp39-win_arm64.whl", hash = "sha256:75dd856611d847299078d56aee60e319df52975b931c992cd1d32ad5143fe772"},
+    {file = "winrt_windows_devices_bluetooth_advertisement-3.2.1.tar.gz", hash = "sha256:0223852a7b7fa5c8dea3c6a93473bd783df4439b1ed938d9871f947933e574cc"},
 ]
 
 [package.dependencies]
-winrt-runtime = "2.2.0"
+winrt-runtime = ">=3.2.1.0,<3.3.0.0"
 
 [package.extras]
-all = ["winrt-Windows.Devices.Bluetooth[all] (==2.2.0)", "winrt-Windows.Foundation.Collections[all] (==2.2.0)", "winrt-Windows.Foundation[all] (==2.2.0)", "winrt-Windows.Storage.Streams[all] (==2.2.0)"]
+all = ["winrt-Windows.Devices.Bluetooth[all] (>=3.2.1.0,<3.3.0.0)", "winrt-Windows.Foundation.Collections[all] (>=3.2.1.0,<3.3.0.0)", "winrt-Windows.Foundation[all] (>=3.2.1.0,<3.3.0.0)", "winrt-Windows.Storage.Streams[all] (>=3.2.1.0,<3.3.0.0)"]
 
 [[package]]
 name = "winrt-windows-devices-bluetooth-genericattributeprofile"
-version = "2.2.0"
+version = "3.2.1"
 description = "Python projection of Windows Runtime (WinRT) APIs"
 optional = false
-python-versions = "<3.14,>=3.9"
+python-versions = ">=3.9"
 groups = ["main", "dev"]
-markers = "platform_system == \"Windows\" and python_version >= \"3.12\""
+markers = "platform_system == \"Windows\""
 files = [
-    {file = "winrt_Windows.Devices.Bluetooth.GenericAttributeProfile-2.2.0-cp310-cp310-win32.whl", hash = "sha256:1472f89b9d6527137e1c58dfb46f22faf2753c477a9d4f85f789b3266ad282a9"},
-    {file = "winrt_Windows.Devices.Bluetooth.GenericAttributeProfile-2.2.0-cp310-cp310-win_amd64.whl", hash = "sha256:e25702f1aa6d4ecdf335805a50048e70ee2206499cfd7ed4fbe1a92358bdcc16"},
-    {file = "winrt_Windows.Devices.Bluetooth.GenericAttributeProfile-2.2.0-cp310-cp310-win_arm64.whl", hash = "sha256:d07d27a6f8f7a1f52aa978724d5a09d43053b428c71563892b70df409049a37a"},
-    {file = "winrt_Windows.Devices.Bluetooth.GenericAttributeProfile-2.2.0-cp311-cp311-win32.whl", hash = "sha256:5c6c863daaa99b0bb670730296137b7c718d94726c112ff44ec73c8b27a12ded"},
-    {file = "winrt_Windows.Devices.Bluetooth.GenericAttributeProfile-2.2.0-cp311-cp311-win_amd64.whl", hash = "sha256:fbee7c90c0a155477eba09eb09297711b2cb32f6ede4c01d0afe58cb3776f06a"},
-    {file = "winrt_Windows.Devices.Bluetooth.GenericAttributeProfile-2.2.0-cp311-cp311-win_arm64.whl", hash = "sha256:655777193fd338e1a8c30ebbb8460c017d08548c54ddec9fc5503f1605c47332"},
-    {file = "winrt_Windows.Devices.Bluetooth.GenericAttributeProfile-2.2.0-cp312-cp312-win32.whl", hash = "sha256:45a48ab8da94eee1590f22826c084f4b1f8c32107a023f05d6a03437931a6852"},
-    {file = "winrt_Windows.Devices.Bluetooth.GenericAttributeProfile-2.2.0-cp312-cp312-win_amd64.whl", hash = "sha256:395cb2fecd0835a402c3c4f274395bc689549b2a6b4155d3ad97b29ec87ee4f2"},
-    {file = "winrt_Windows.Devices.Bluetooth.GenericAttributeProfile-2.2.0-cp312-cp312-win_arm64.whl", hash = "sha256:25063b43550c5630f188cfb263ab09acc920db97d1625c48e24baa6e7d445b6e"},
-    {file = "winrt_Windows.Devices.Bluetooth.GenericAttributeProfile-2.2.0-cp313-cp313-win32.whl", hash = "sha256:d1d26512fe45c3be0dbeb932dbd75abd580cd46ccfc278fcf51042eff302fa9c"},
-    {file = "winrt_Windows.Devices.Bluetooth.GenericAttributeProfile-2.2.0-cp313-cp313-win_amd64.whl", hash = "sha256:21786840502a34958dd5fb137381f9144a6437b49ee90a877beb3148ead6cfe9"},
-    {file = "winrt_Windows.Devices.Bluetooth.GenericAttributeProfile-2.2.0-cp313-cp313-win_arm64.whl", hash = "sha256:5d98852458b639e875bb4895a9ad2d5626059bc99c5f745be0560d235502d648"},
-    {file = "winrt_Windows.Devices.Bluetooth.GenericAttributeProfile-2.2.0-cp39-cp39-win32.whl", hash = "sha256:827b390b1a47c9aa6bfd717b66822f4fc698b0c02c8678924e2bc6ac37093b65"},
-    {file = "winrt_Windows.Devices.Bluetooth.GenericAttributeProfile-2.2.0-cp39-cp39-win_amd64.whl", hash = "sha256:727567b725ca94b677bda97a6f725d58fc1a4652d4cc232b44cc57dd7ba9ee87"},
-    {file = "winrt_Windows.Devices.Bluetooth.GenericAttributeProfile-2.2.0-cp39-cp39-win_arm64.whl", hash = "sha256:ac901d17d2350785bce18282cd29d002d2c4da8adff5160891c4115ae010a2d0"},
-    {file = "winrt_windows_devices_bluetooth_genericattributeprofile-2.2.0.tar.gz", hash = "sha256:0de4ee5f57223107f25c20f6bb2739947670a2f8cf09907f3e611efc81e7c6e0"},
+    {file = "winrt_windows_devices_bluetooth_genericattributeprofile-3.2.1-cp310-cp310-win32.whl", hash = "sha256:af4914d7b30b49232092cd3b934e3ed6f5d3b1715ba47238541408ee595b7f46"},
+    {file = "winrt_windows_devices_bluetooth_genericattributeprofile-3.2.1-cp310-cp310-win_amd64.whl", hash = "sha256:0e557dd52fc80392b8bd7c237e1153a50a164b3983838b4ac674551072efc9ed"},
+    {file = "winrt_windows_devices_bluetooth_genericattributeprofile-3.2.1-cp310-cp310-win_arm64.whl", hash = "sha256:64cff62baa6b7aadd6c206e61d149113fdcda17360feb6e9d05bc8bbda4b9fde"},
+    {file = "winrt_windows_devices_bluetooth_genericattributeprofile-3.2.1-cp311-cp311-win32.whl", hash = "sha256:832cf65d035a11e6dbfef4fd66abdcc46be7e911ec96e2e72e98e12d8d5b9d3c"},
+    {file = "winrt_windows_devices_bluetooth_genericattributeprofile-3.2.1-cp311-cp311-win_amd64.whl", hash = "sha256:8179638a6c721b0bbf04ba251ef98d5e02d9a17f0cce377398e42c4fbb441415"},
+    {file = "winrt_windows_devices_bluetooth_genericattributeprofile-3.2.1-cp311-cp311-win_arm64.whl", hash = "sha256:70b7edfca3190b89ae38bf60972b11978311b6d933d3142ae45560c955dbf5c7"},
+    {file = "winrt_windows_devices_bluetooth_genericattributeprofile-3.2.1-cp312-cp312-win32.whl", hash = "sha256:ef894d21e0a805f3e114940254636a8045335fa9de766c7022af5d127dfad557"},
+    {file = "winrt_windows_devices_bluetooth_genericattributeprofile-3.2.1-cp312-cp312-win_amd64.whl", hash = "sha256:db05de95cd1b24a51abb69cb936a8b17e9214e015757d0b37e3a5e207ddceb3d"},
+    {file = "winrt_windows_devices_bluetooth_genericattributeprofile-3.2.1-cp312-cp312-win_arm64.whl", hash = "sha256:8d4e131cf3d15fc5ad81c1bcde3509ac171298217381abed6bdf687f29871984"},
+    {file = "winrt_windows_devices_bluetooth_genericattributeprofile-3.2.1-cp313-cp313-win32.whl", hash = "sha256:b1879c8dcf46bd2110b9ad4b0b185f4e2a5f95170d014539203a5fee2b2115f0"},
+    {file = "winrt_windows_devices_bluetooth_genericattributeprofile-3.2.1-cp313-cp313-win_amd64.whl", hash = "sha256:8d8d89f01e9b6931fb48217847caac3227a0aeb38a5b7782af71c2e7b262ec30"},
+    {file = "winrt_windows_devices_bluetooth_genericattributeprofile-3.2.1-cp313-cp313-win_arm64.whl", hash = "sha256:4e71207bb89798016b1795bb15daf78afe45529f2939b3b9e78894cfe650b383"},
+    {file = "winrt_windows_devices_bluetooth_genericattributeprofile-3.2.1-cp39-cp39-win32.whl", hash = "sha256:963339a0161f9970b577a6193924be783978d11693da48b41a025f61b3c5562a"},
+    {file = "winrt_windows_devices_bluetooth_genericattributeprofile-3.2.1-cp39-cp39-win_amd64.whl", hash = "sha256:d43615c5dfa939dd30fe80dc0649434a13cc7cf0294ad0d7283d5a9f48c6ce86"},
+    {file = "winrt_windows_devices_bluetooth_genericattributeprofile-3.2.1-cp39-cp39-win_arm64.whl", hash = "sha256:8e70fa970997e2e67a8a4172bc00b0b2a79b5ff5bb2668f79cf10b3fd63d3974"},
+    {file = "winrt_windows_devices_bluetooth_genericattributeprofile-3.2.1.tar.gz", hash = "sha256:cdf6ddc375e9150d040aca67f5a17c41ceaf13a63f3668f96608bc1d045dde71"},
 ]
 
 [package.dependencies]
-winrt-runtime = "2.2.0"
+winrt-runtime = ">=3.2.1.0,<3.3.0.0"
 
 [package.extras]
-all = ["winrt-Windows.Devices.Bluetooth[all] (==2.2.0)", "winrt-Windows.Devices.Enumeration[all] (==2.2.0)", "winrt-Windows.Foundation.Collections[all] (==2.2.0)", "winrt-Windows.Foundation[all] (==2.2.0)", "winrt-Windows.Storage.Streams[all] (==2.2.0)"]
+all = ["winrt-Windows.Devices.Bluetooth[all] (>=3.2.1.0,<3.3.0.0)", "winrt-Windows.Devices.Enumeration[all] (>=3.2.1.0,<3.3.0.0)", "winrt-Windows.Foundation.Collections[all] (>=3.2.1.0,<3.3.0.0)", "winrt-Windows.Foundation[all] (>=3.2.1.0,<3.3.0.0)", "winrt-Windows.Storage.Streams[all] (>=3.2.1.0,<3.3.0.0)"]
 
 [[package]]
 name = "winrt-windows-devices-enumeration"
-version = "2.2.0"
+version = "3.2.1"
 description = "Python projection of Windows Runtime (WinRT) APIs"
 optional = false
-python-versions = "<3.14,>=3.9"
+python-versions = ">=3.9"
 groups = ["main", "dev"]
-markers = "platform_system == \"Windows\" and python_version >= \"3.12\""
+markers = "platform_system == \"Windows\""
 files = [
-    {file = "winrt_Windows.Devices.Enumeration-2.2.0-cp310-cp310-win32.whl", hash = "sha256:69e87ba0ae5c31f60bc07d0558d91af96213d8b8b2b1be0ccf3e5824cab466ef"},
-    {file = "winrt_Windows.Devices.Enumeration-2.2.0-cp310-cp310-win_amd64.whl", hash = "sha256:e6993d5305ff750c5c51f57253935458996fb45c049891f2fb00772cc6ece6b3"},
-    {file = "winrt_Windows.Devices.Enumeration-2.2.0-cp310-cp310-win_arm64.whl", hash = "sha256:bb54aa94b17052d65fe4fa5777183cf9bfb697574c3461759114d3ec0c802cec"},
-    {file = "winrt_Windows.Devices.Enumeration-2.2.0-cp311-cp311-win32.whl", hash = "sha256:fef83263e73c2611d223f06735d2c2a16629d723f74e1964dc882f90b6e1cda1"},
-    {file = "winrt_Windows.Devices.Enumeration-2.2.0-cp311-cp311-win_amd64.whl", hash = "sha256:cf3cec5a6fba069ecbd4f3efa95e9f197aeebdd05a60bcd52b953888169ab7ee"},
-    {file = "winrt_Windows.Devices.Enumeration-2.2.0-cp311-cp311-win_arm64.whl", hash = "sha256:d9ce308c492c1e9f2417f91ad02e366f4269cc1c6d271f0be4092b758df4c9bf"},
-    {file = "winrt_Windows.Devices.Enumeration-2.2.0-cp312-cp312-win32.whl", hash = "sha256:5bea21988749fad21574ea789b4090cfbfbb982a5f9a42b2d6f05b3ad47f68bd"},
-    {file = "winrt_Windows.Devices.Enumeration-2.2.0-cp312-cp312-win_amd64.whl", hash = "sha256:c9718d7033550a029e0c2848ff620bf063a519cb22ab9d880d64ceb302763a48"},
-    {file = "winrt_Windows.Devices.Enumeration-2.2.0-cp312-cp312-win_arm64.whl", hash = "sha256:69f67f01aa519304e4af04a1a23261bd8b57136395de2e08d56968f9c6daa18e"},
-    {file = "winrt_Windows.Devices.Enumeration-2.2.0-cp313-cp313-win32.whl", hash = "sha256:84447916282773d7b7e5a445eae0ab273c21105f1bbcdfb7d8e21cd41403d5c1"},
-    {file = "winrt_Windows.Devices.Enumeration-2.2.0-cp313-cp313-win_amd64.whl", hash = "sha256:1bb9d97f8d2518bb5b331f825431814277de4341811a1776e79d51767e79700c"},
-    {file = "winrt_Windows.Devices.Enumeration-2.2.0-cp313-cp313-win_arm64.whl", hash = "sha256:2a5408423f680f6b36d7accad7151336ea16ad1eaa2652f60ed88e2cbd14562c"},
-    {file = "winrt_Windows.Devices.Enumeration-2.2.0-cp39-cp39-win32.whl", hash = "sha256:51f4c9b6f3376913e3009bfe232cfc082357b24d6eeec098cf53f361527e1c1f"},
-    {file = "winrt_Windows.Devices.Enumeration-2.2.0-cp39-cp39-win_amd64.whl", hash = "sha256:1e6895d5538539d0c6bd081374e7646684901038d4d2dede7841b63adfaf8086"},
-    {file = "winrt_Windows.Devices.Enumeration-2.2.0-cp39-cp39-win_arm64.whl", hash = "sha256:0845fca0841003ae446650ab6695c38d45623bc1e8e40a43e839e450a874fd6f"},
-    {file = "winrt_windows_devices_enumeration-2.2.0.tar.gz", hash = "sha256:cfe1780101e3ef9c5b4716cca608aa6b6ddf19f1d7a2a70434241d438db19d3d"},
+    {file = "winrt_windows_devices_enumeration-3.2.1-cp310-cp310-win32.whl", hash = "sha256:40dac777d8f45b41449f3ff1ae70f0d457f1ede53f53962a6e2521b651533db5"},
+    {file = "winrt_windows_devices_enumeration-3.2.1-cp310-cp310-win_amd64.whl", hash = "sha256:a101ec3e0ad0a0783032fdcd5dc48e7cd68ee034cbde4f903a8c7b391532c71a"},
+    {file = "winrt_windows_devices_enumeration-3.2.1-cp310-cp310-win_arm64.whl", hash = "sha256:3296a3863ac086928ff3f3dc872b2a2fb971dab728817424264f3ca547504e9e"},
+    {file = "winrt_windows_devices_enumeration-3.2.1-cp311-cp311-win32.whl", hash = "sha256:9f29465a6c6b0456e4330d4ad09eccdd53a17e1e97695c2e57db0d4666cc0011"},
+    {file = "winrt_windows_devices_enumeration-3.2.1-cp311-cp311-win_amd64.whl", hash = "sha256:2a725d04b4cb43aa0e2af035f73a60d16a6c0ff165fcb6b763383e4e33a975fd"},
+    {file = "winrt_windows_devices_enumeration-3.2.1-cp311-cp311-win_arm64.whl", hash = "sha256:6365ef5978d4add26678827286034acf474b6b133aa4054e76567d12194e6817"},
+    {file = "winrt_windows_devices_enumeration-3.2.1-cp312-cp312-win32.whl", hash = "sha256:1db22b0292b93b0688d11ad932ad1f3629d4f471310281a2fbfe187530c2c1f3"},
+    {file = "winrt_windows_devices_enumeration-3.2.1-cp312-cp312-win_amd64.whl", hash = "sha256:a73bc88d7f510af454f2b392985501c96f39b89fd987140708ccaec1588ceebc"},
+    {file = "winrt_windows_devices_enumeration-3.2.1-cp312-cp312-win_arm64.whl", hash = "sha256:2853d687803f0dd76ae1afe3648abc0453e09dff0e7eddbb84b792eddb0473ca"},
+    {file = "winrt_windows_devices_enumeration-3.2.1-cp313-cp313-win32.whl", hash = "sha256:14a71cdcc84f624c209cbb846ed6bd9767a9a9437b2bf26b48ac9a91599da6e9"},
+    {file = "winrt_windows_devices_enumeration-3.2.1-cp313-cp313-win_amd64.whl", hash = "sha256:6ca40d334734829e178ad46375275c4f7b5d6d2d4fc2e8879690452cbfb36015"},
+    {file = "winrt_windows_devices_enumeration-3.2.1-cp313-cp313-win_arm64.whl", hash = "sha256:2d14d187f43e4409c7814b7d1693c03a270e77489b710d92fcbbaeca5de260d4"},
+    {file = "winrt_windows_devices_enumeration-3.2.1-cp39-cp39-win32.whl", hash = "sha256:986e8d651b769a0e60d2834834bdd3f6959f6a88caa0c9acb917797e6b43a588"},
+    {file = "winrt_windows_devices_enumeration-3.2.1-cp39-cp39-win_amd64.whl", hash = "sha256:10da7d403ac4afd385fe13bd5808c9a5dd616a8ef31ca5c64cea3f87673661c1"},
+    {file = "winrt_windows_devices_enumeration-3.2.1-cp39-cp39-win_arm64.whl", hash = "sha256:679e471d21ac22cb50de1bf4dfc4c0c3f5da9f3e3fbc7f08dcacfe9de9d6dd58"},
+    {file = "winrt_windows_devices_enumeration-3.2.1.tar.gz", hash = "sha256:df316899e39bfc0ffc1f3cb0f5ee54d04e1d167fbbcc1484d2d5121449a935cf"},
 ]
 
 [package.dependencies]
-winrt-runtime = "2.2.0"
+winrt-runtime = ">=3.2.1.0,<3.3.0.0"
 
 [package.extras]
-all = ["winrt-Windows.ApplicationModel.Background[all] (==2.2.0)", "winrt-Windows.Foundation.Collections[all] (==2.2.0)", "winrt-Windows.Foundation[all] (==2.2.0)", "winrt-Windows.Security.Credentials[all] (==2.2.0)", "winrt-Windows.Storage.Streams[all] (==2.2.0)", "winrt-Windows.UI.Popups[all] (==2.2.0)", "winrt-Windows.UI[all] (==2.2.0)"]
+all = ["winrt-Windows.ApplicationModel.Background[all] (>=3.2.1.0,<3.3.0.0)", "winrt-Windows.Foundation.Collections[all] (>=3.2.1.0,<3.3.0.0)", "winrt-Windows.Foundation[all] (>=3.2.1.0,<3.3.0.0)", "winrt-Windows.Security.Credentials[all] (>=3.2.1.0,<3.3.0.0)", "winrt-Windows.Storage.Streams[all] (>=3.2.1.0,<3.3.0.0)", "winrt-Windows.UI.Popups[all] (>=3.2.1.0,<3.3.0.0)", "winrt-Windows.UI[all] (>=3.2.1.0,<3.3.0.0)"]
 
 [[package]]
 name = "winrt-windows-foundation"
-version = "2.2.0"
+version = "3.2.1"
 description = "Python projection of Windows Runtime (WinRT) APIs"
 optional = false
-python-versions = "<3.14,>=3.9"
+python-versions = ">=3.9"
 groups = ["main", "dev"]
-markers = "platform_system == \"Windows\" and python_version >= \"3.12\""
+markers = "platform_system == \"Windows\""
 files = [
-    {file = "winrt_Windows.Foundation-2.2.0-cp310-cp310-win32.whl", hash = "sha256:cb86bbf04f72d983e4ae13db0a48784638b36214bb2c44809f39686ef3314354"},
-    {file = "winrt_Windows.Foundation-2.2.0-cp310-cp310-win_amd64.whl", hash = "sha256:2dbd0957216c07db4b91a144a0ffa7c8892cc668b19ca15b78067255445741b2"},
-    {file = "winrt_Windows.Foundation-2.2.0-cp310-cp310-win_arm64.whl", hash = "sha256:5345f7d0504aa1a605be5b5fe0d1944b322591f7669c2c86b7c45384924c8c9b"},
-    {file = "winrt_Windows.Foundation-2.2.0-cp311-cp311-win32.whl", hash = "sha256:f6711adf8a34e48c94183e792f153de5f3796f8f3c045356544605384bbcb7e1"},
-    {file = "winrt_Windows.Foundation-2.2.0-cp311-cp311-win_amd64.whl", hash = "sha256:0a5bfe2647659e7ec288d8552e61e577a931914531ccc9cb958469d85f049d6b"},
-    {file = "winrt_Windows.Foundation-2.2.0-cp311-cp311-win_arm64.whl", hash = "sha256:9eabbd1b179fd04f167884fa0feaa17ccd67d89f6eac4099b16c6c0dc22e9f32"},
-    {file = "winrt_Windows.Foundation-2.2.0-cp312-cp312-win32.whl", hash = "sha256:0f0319659f00d04d13fc5db45f574479a396147c955628dc2dda056397a0df28"},
-    {file = "winrt_Windows.Foundation-2.2.0-cp312-cp312-win_amd64.whl", hash = "sha256:8bc605242d268cd8ccce68c78ec4a967b8e5431c3a969c9e7a01d454696dfb3f"},
-    {file = "winrt_Windows.Foundation-2.2.0-cp312-cp312-win_arm64.whl", hash = "sha256:f901b20c3a874a2cf9dcb1e97bbcff329d95fd3859a873be314a5a58073b4690"},
-    {file = "winrt_Windows.Foundation-2.2.0-cp313-cp313-win32.whl", hash = "sha256:c5cf43bb1dccf3a302d16572d53f26479d277e02606531782c364056c2323678"},
-    {file = "winrt_Windows.Foundation-2.2.0-cp313-cp313-win_amd64.whl", hash = "sha256:10c84276ff182a06da6deb1ba9ad375f9b3fbc15c3684a160e775005d915197a"},
-    {file = "winrt_Windows.Foundation-2.2.0-cp313-cp313-win_arm64.whl", hash = "sha256:473cc57664bfd5401ec171c8f55079cdc8a980210f2c82fb2945361ea640bfbf"},
-    {file = "winrt_Windows.Foundation-2.2.0-cp39-cp39-win32.whl", hash = "sha256:32578bd31eda714bc5cb5b10f0e778c720a2e45bc9b3c60690faa1615336047d"},
-    {file = "winrt_Windows.Foundation-2.2.0-cp39-cp39-win_amd64.whl", hash = "sha256:7bfb62127959f56fdacad6a817176a8b22cf6917a0d5c3e5d25cdad33a90173a"},
-    {file = "winrt_Windows.Foundation-2.2.0-cp39-cp39-win_arm64.whl", hash = "sha256:07ea5a2f05cb9fb433371e55f70fbe27f32a6eb07ae28042f01678b4d82d823a"},
-    {file = "winrt_windows_foundation-2.2.0.tar.gz", hash = "sha256:9a76291204900cd92008163fbe273ae43c9a925ca4a5a29cdd736e59cd397bf1"},
+    {file = "winrt_windows_foundation-3.2.1-cp310-cp310-win32.whl", hash = "sha256:677e98165dcbbf7a2367f905bc61090ef2c568b6e465f87cf7276df4734f3b0b"},
+    {file = "winrt_windows_foundation-3.2.1-cp310-cp310-win_amd64.whl", hash = "sha256:a8f27b4f0fdb73ccc4a3e24bc8010a6607b2bdd722fa799eafce7daa87d19d39"},
+    {file = "winrt_windows_foundation-3.2.1-cp310-cp310-win_arm64.whl", hash = "sha256:d900c6165fab4ea589811efa2feed27b532e1b6f505f63bf63e2052b8cb6bdc4"},
+    {file = "winrt_windows_foundation-3.2.1-cp311-cp311-win32.whl", hash = "sha256:d1b5970241ccd61428f7330d099be75f4f52f25e510d82c84dbbdaadd625e437"},
+    {file = "winrt_windows_foundation-3.2.1-cp311-cp311-win_amd64.whl", hash = "sha256:f3762be2f6e0f2aedf83a0742fd727290b397ffe3463d963d29211e4ebb53a7e"},
+    {file = "winrt_windows_foundation-3.2.1-cp311-cp311-win_arm64.whl", hash = "sha256:806c77818217b3476e6c617293b3d5b0ff8a9901549dc3417586f6799938d671"},
+    {file = "winrt_windows_foundation-3.2.1-cp312-cp312-win32.whl", hash = "sha256:867642ccf629611733db482c4288e17b7919f743a5873450efb6d69ae09fdc2b"},
+    {file = "winrt_windows_foundation-3.2.1-cp312-cp312-win_amd64.whl", hash = "sha256:45550c5b6c2125cde495c409633e6b1ea5aa1677724e3b95eb8140bfccbe30c9"},
+    {file = "winrt_windows_foundation-3.2.1-cp312-cp312-win_arm64.whl", hash = "sha256:94f4661d71cb35ebc52be7af112f2eeabdfa02cb05e0243bf9d6bd2cafaa6f37"},
+    {file = "winrt_windows_foundation-3.2.1-cp313-cp313-win32.whl", hash = "sha256:3998dc58ed50ecbdbabace1cdef3a12920b725e32a5806d648ad3f4829d5ba46"},
+    {file = "winrt_windows_foundation-3.2.1-cp313-cp313-win_amd64.whl", hash = "sha256:6e98617c1e46665c7a56ce3f5d28e252798416d1ebfee3201267a644a4e3c479"},
+    {file = "winrt_windows_foundation-3.2.1-cp313-cp313-win_arm64.whl", hash = "sha256:2a8c1204db5c352f6a563130a5a41d25b887aff7897bb677d4ff0b660315aad4"},
+    {file = "winrt_windows_foundation-3.2.1-cp39-cp39-win32.whl", hash = "sha256:14d5191725301498e4feb744d91f5b46ce317bf3d28370efda407d5c87f4423b"},
+    {file = "winrt_windows_foundation-3.2.1-cp39-cp39-win_amd64.whl", hash = "sha256:de5e4f61d253a91ba05019dbf4338c43f962bdad935721ced5e7997933994af5"},
+    {file = "winrt_windows_foundation-3.2.1-cp39-cp39-win_arm64.whl", hash = "sha256:ebbf6e8168398c9ed0c72c8bdde95a406b9fbb9a23e3705d4f0fe28e5a209705"},
+    {file = "winrt_windows_foundation-3.2.1.tar.gz", hash = "sha256:ad2f1fcaa6c34672df45527d7c533731fdf65b67c4638c2b4aca949f6eec0656"},
 ]
 
 [package.dependencies]
-winrt-runtime = "2.2.0"
+winrt-runtime = ">=3.2.1.0,<3.3.0.0"
 
 [package.extras]
-all = ["winrt-Windows.Foundation.Collections[all] (==2.2.0)"]
+all = ["winrt-Windows.Foundation.Collections[all] (>=3.2.1.0,<3.3.0.0)"]
 
 [[package]]
 name = "winrt-windows-foundation-collections"
-version = "2.2.0"
+version = "3.2.1"
 description = "Python projection of Windows Runtime (WinRT) APIs"
 optional = false
-python-versions = "<3.14,>=3.9"
+python-versions = ">=3.9"
 groups = ["main", "dev"]
-markers = "platform_system == \"Windows\" and python_version >= \"3.12\""
+markers = "platform_system == \"Windows\""
 files = [
-    {file = "winrt_Windows.Foundation.Collections-2.2.0-cp310-cp310-win32.whl", hash = "sha256:92a031fca53910c8bce683391888ba3427db178fc47653310de16fb7e9131e9d"},
-    {file = "winrt_Windows.Foundation.Collections-2.2.0-cp310-cp310-win_amd64.whl", hash = "sha256:a71925d738a443cf27522f34ced84730f1b325f69ccdd0145580e6078d4481c5"},
-    {file = "winrt_Windows.Foundation.Collections-2.2.0-cp310-cp310-win_arm64.whl", hash = "sha256:74c9419b26b510e6e95182e02dc55a78094b6f2af5002330467d030ae6d0b765"},
-    {file = "winrt_Windows.Foundation.Collections-2.2.0-cp311-cp311-win32.whl", hash = "sha256:8a76d79be0af1840b9c5ac1879dcf5aa65b512accd8278ac6424dcbfdb2a6fe1"},
-    {file = "winrt_Windows.Foundation.Collections-2.2.0-cp311-cp311-win_amd64.whl", hash = "sha256:b18dcd7bc8cf70758b965397e26da725ac345dd9f16b922b0204e8f21ed4d7e6"},
-    {file = "winrt_Windows.Foundation.Collections-2.2.0-cp311-cp311-win_arm64.whl", hash = "sha256:1d6b0b04683e98989dd611940b5fe36c1338f6d91f43c1bdc88f2f2f1956a968"},
-    {file = "winrt_Windows.Foundation.Collections-2.2.0-cp312-cp312-win32.whl", hash = "sha256:ade4ea4584ba96e39d2b34f1036d8cb40ff2e9609a090562cfd2b8837dc7f828"},
-    {file = "winrt_Windows.Foundation.Collections-2.2.0-cp312-cp312-win_amd64.whl", hash = "sha256:1e896291c5efe0566db84eab13888bee7300392a6811ae85c55ced51bac0b147"},
-    {file = "winrt_Windows.Foundation.Collections-2.2.0-cp312-cp312-win_arm64.whl", hash = "sha256:e44e13027597fcc638073459dcc159a21c57f9dbe0e9a2282326e32386c25bd0"},
-    {file = "winrt_Windows.Foundation.Collections-2.2.0-cp313-cp313-win32.whl", hash = "sha256:ea7fa3a7ecb754eb09408e7127cd960d316cc1ba60a6440e191a81f14b42265c"},
-    {file = "winrt_Windows.Foundation.Collections-2.2.0-cp313-cp313-win_amd64.whl", hash = "sha256:f338860e27a8a67b386273c73ad10c680a9f40a42e0185cc6443d208a7425ece"},
-    {file = "winrt_Windows.Foundation.Collections-2.2.0-cp313-cp313-win_arm64.whl", hash = "sha256:dd705d4c62bd8c109f2bc667a0c76dc30ef9a1b2ced3e7bd95253a31e39781df"},
-    {file = "winrt_Windows.Foundation.Collections-2.2.0-cp39-cp39-win32.whl", hash = "sha256:6798595621ad58473fe9e86f5f58d732628d88f06535b68c4d86cb5aed78f2b3"},
-    {file = "winrt_Windows.Foundation.Collections-2.2.0-cp39-cp39-win_amd64.whl", hash = "sha256:c8ac098a60dad586e950a8236bab09ae57b6a08147d36db6b0aed135a9a81831"},
-    {file = "winrt_Windows.Foundation.Collections-2.2.0-cp39-cp39-win_arm64.whl", hash = "sha256:c67105ebd88faf10d2941516c0ea9f73d9282fb8a7d2a73163a7a7e013bba839"},
-    {file = "winrt_windows_foundation_collections-2.2.0.tar.gz", hash = "sha256:10db64da49185af3e14465cd65ec4055eb122a96daedb73b774889f3b7fcfa63"},
+    {file = "winrt_windows_foundation_collections-3.2.1-cp310-cp310-win32.whl", hash = "sha256:46948484addfc4db981dab35688d4457533ceb54d4954922af41503fddaa8389"},
+    {file = "winrt_windows_foundation_collections-3.2.1-cp310-cp310-win_amd64.whl", hash = "sha256:899eaa3a93c35bfb1857d649e8dd60c38b978dda7cedd9725fcdbcebba156fd6"},
+    {file = "winrt_windows_foundation_collections-3.2.1-cp310-cp310-win_arm64.whl", hash = "sha256:c36eb49ad1eba1b32134df768bb47af13cabb9b59f974a3cea37843e2d80e0e6"},
+    {file = "winrt_windows_foundation_collections-3.2.1-cp311-cp311-win32.whl", hash = "sha256:9b272d9936e7db4840881c5dcf921eb26789ae4ef23fb6ec15e13e19a16254e7"},
+    {file = "winrt_windows_foundation_collections-3.2.1-cp311-cp311-win_amd64.whl", hash = "sha256:c646a5d442dd6540ade50890081ca118b41f073356e19032d0a5d7d0d38fbc89"},
+    {file = "winrt_windows_foundation_collections-3.2.1-cp311-cp311-win_arm64.whl", hash = "sha256:2c4630027c93cdd518b0cf4cc726b8fbdbc3388e36d02aa1de190a0fc18ca523"},
+    {file = "winrt_windows_foundation_collections-3.2.1-cp312-cp312-win32.whl", hash = "sha256:15704eef3125788f846f269cf54a3d89656fa09a1dc8428b70871f717d595ad6"},
+    {file = "winrt_windows_foundation_collections-3.2.1-cp312-cp312-win_amd64.whl", hash = "sha256:550dfb8c82fe74d9e0728a2a16a9175cc9e34ca2b8ef758d69b2a398894b698b"},
+    {file = "winrt_windows_foundation_collections-3.2.1-cp312-cp312-win_arm64.whl", hash = "sha256:810ad4bd11ab4a74fdbcd3ed33b597ef7c0b03af73fc9d7986c22bcf3bd24f84"},
+    {file = "winrt_windows_foundation_collections-3.2.1-cp313-cp313-win32.whl", hash = "sha256:4267a711b63476d36d39227883aeb3fb19ac92b88a9fc9973e66fbce1fd4aed9"},
+    {file = "winrt_windows_foundation_collections-3.2.1-cp313-cp313-win_amd64.whl", hash = "sha256:5e12a6e75036ee90484c33e204b85fb6785fcc9e7c8066ad65097301f48cdd10"},
+    {file = "winrt_windows_foundation_collections-3.2.1-cp313-cp313-win_arm64.whl", hash = "sha256:34b556255562f1b36d07fba933c2bcd9f0db167fa96727a6cbb4717b152ad7a2"},
+    {file = "winrt_windows_foundation_collections-3.2.1-cp39-cp39-win32.whl", hash = "sha256:20610f098b84c87765018cbc71471092197881f3b92e5d06158fad3bfcea2563"},
+    {file = "winrt_windows_foundation_collections-3.2.1-cp39-cp39-win_amd64.whl", hash = "sha256:e9739775320ac4c0238e1775d94a54e886d621f9995977e65d4feb8b3778c111"},
+    {file = "winrt_windows_foundation_collections-3.2.1-cp39-cp39-win_arm64.whl", hash = "sha256:e4c6bddb1359d5014ceb45fe2ecd838d4afeb1184f2ea202c2d21037af0d08a3"},
+    {file = "winrt_windows_foundation_collections-3.2.1.tar.gz", hash = "sha256:0eff1ad0d8d763ad17e9e7bbd0c26a62b27215016393c05b09b046d6503ae6d5"},
 ]
 
 [package.dependencies]
-winrt-runtime = "2.2.0"
+winrt-runtime = ">=3.2.1.0,<3.3.0.0"
 
 [package.extras]
-all = ["winrt-Windows.Foundation[all] (==2.2.0)"]
+all = ["winrt-Windows.Foundation[all] (>=3.2.1.0,<3.3.0.0)"]
 
 [[package]]
 name = "winrt-windows-storage-streams"
-version = "2.2.0"
+version = "3.2.1"
 description = "Python projection of Windows Runtime (WinRT) APIs"
 optional = false
-python-versions = "<3.14,>=3.9"
+python-versions = ">=3.9"
 groups = ["main", "dev"]
-markers = "platform_system == \"Windows\" and python_version >= \"3.12\""
+markers = "platform_system == \"Windows\""
 files = [
-    {file = "winrt_Windows.Storage.Streams-2.2.0-cp310-cp310-win32.whl", hash = "sha256:e888ae08f1245f8b6d53783487581fc664683bb29778f2acca6bafb6a78bcc22"},
-    {file = "winrt_Windows.Storage.Streams-2.2.0-cp310-cp310-win_amd64.whl", hash = "sha256:9213576d566398657142372aa34354b9f7b8ce0581cff308c7afbc0d908368a1"},
-    {file = "winrt_Windows.Storage.Streams-2.2.0-cp310-cp310-win_arm64.whl", hash = "sha256:49d2bdd749994fb81c813f02f3c506fff580f358083b65a123308f322c2fe6cf"},
-    {file = "winrt_Windows.Storage.Streams-2.2.0-cp311-cp311-win32.whl", hash = "sha256:db4ebe7ed79a585a1bb78a3f8cea05f7d74a6a8bc913f61b31ddfe3ae10d134d"},
-    {file = "winrt_Windows.Storage.Streams-2.2.0-cp311-cp311-win_amd64.whl", hash = "sha256:f9f77c5398eb90c58645c62b6f278f701d2636c0007817cc6fc28256adbebdcb"},
-    {file = "winrt_Windows.Storage.Streams-2.2.0-cp311-cp311-win_arm64.whl", hash = "sha256:894c2616eeae887275a1a64a4233964f9466ee1281b8c11ec7c06d64aafec88a"},
-    {file = "winrt_Windows.Storage.Streams-2.2.0-cp312-cp312-win32.whl", hash = "sha256:85a2eefb2935db92d10b8e9be836c431d47298b566b55da633b11f822c63838d"},
-    {file = "winrt_Windows.Storage.Streams-2.2.0-cp312-cp312-win_amd64.whl", hash = "sha256:f88cdc6204219c7f1b58d793826ea2eff013a45306fbb340d61c10896c237547"},
-    {file = "winrt_Windows.Storage.Streams-2.2.0-cp312-cp312-win_arm64.whl", hash = "sha256:78af200d0db5ebe151b1df194de97f1e71c2d5f5cba4da09798c15402f4ab91d"},
-    {file = "winrt_Windows.Storage.Streams-2.2.0-cp313-cp313-win32.whl", hash = "sha256:6408184ba5d17e0d408d7c0b85357a58f13c775521d17a8730f1a680553e0061"},
-    {file = "winrt_Windows.Storage.Streams-2.2.0-cp313-cp313-win_amd64.whl", hash = "sha256:ad9cd8e97cf4115ba074ec153ab273c370e690abb010d8b3b970339d20f94321"},
-    {file = "winrt_Windows.Storage.Streams-2.2.0-cp313-cp313-win_arm64.whl", hash = "sha256:c467cf04005b72efd769ea99c7c15973db44d5ac6084a7c7714af85e49981abd"},
-    {file = "winrt_Windows.Storage.Streams-2.2.0-cp39-cp39-win32.whl", hash = "sha256:f72559b5de7c3a0cab97cd50ab594a0e3278df4d38e03f79b5b2d2e13e926c4c"},
-    {file = "winrt_Windows.Storage.Streams-2.2.0-cp39-cp39-win_amd64.whl", hash = "sha256:37bf5bb801aa1e4a4c6f3ddfe2b8c9b05d7726ebfdfc8b9bfe41bdcc3866749b"},
-    {file = "winrt_Windows.Storage.Streams-2.2.0-cp39-cp39-win_arm64.whl", hash = "sha256:2dcab77a7affb1136503edec82a755b82716abd882fadd5f50ce260438b9c21b"},
-    {file = "winrt_windows_storage_streams-2.2.0.tar.gz", hash = "sha256:46a8718c4e00a129d305f03571789f4bed530c05e135c2476494af93f374b68a"},
+    {file = "winrt_windows_storage_streams-3.2.1-cp310-cp310-win32.whl", hash = "sha256:89bb2d667ebed6861af36ed2710757456e12921ee56347946540320dacf6c003"},
+    {file = "winrt_windows_storage_streams-3.2.1-cp310-cp310-win_amd64.whl", hash = "sha256:48a78e5dc7d3488eb77e449c278bc6d6ac28abcdda7df298462c4112d7635d00"},
+    {file = "winrt_windows_storage_streams-3.2.1-cp310-cp310-win_arm64.whl", hash = "sha256:da71231d4a554f9f15f1249b4990c6431176f6dfb0e3385c7caa7896f4ca24d6"},
+    {file = "winrt_windows_storage_streams-3.2.1-cp311-cp311-win32.whl", hash = "sha256:7dace2f9e364422255d0e2f335f741bfe7abb1f4d4f6003622b2450b87c91e69"},
+    {file = "winrt_windows_storage_streams-3.2.1-cp311-cp311-win_amd64.whl", hash = "sha256:b02fa251a7eef6081eca1a5f64ecf349cfd1ac0ac0c5a5a30be52897d060bed5"},
+    {file = "winrt_windows_storage_streams-3.2.1-cp311-cp311-win_arm64.whl", hash = "sha256:efdf250140340a75647e8e8ad002782d91308e9fdd1e19470a5b9cc969ae4780"},
+    {file = "winrt_windows_storage_streams-3.2.1-cp312-cp312-win32.whl", hash = "sha256:77c1f0e004b84347b5bd705e8f0fc63be8cd29a6093be13f1d0869d0d97b7d78"},
+    {file = "winrt_windows_storage_streams-3.2.1-cp312-cp312-win_amd64.whl", hash = "sha256:e4508ee135af53e4fc142876abbf4bc7c2a95edfc7d19f52b291a8499cacd6dc"},
+    {file = "winrt_windows_storage_streams-3.2.1-cp312-cp312-win_arm64.whl", hash = "sha256:040cb94e6fb26b0d00a00e8b88b06fadf29dfe18cf24ed6cb3e69709c3613307"},
+    {file = "winrt_windows_storage_streams-3.2.1-cp313-cp313-win32.whl", hash = "sha256:401bb44371720dc43bd1e78662615a2124372e7d5d9d65dfa8f77877bbcb8163"},
+    {file = "winrt_windows_storage_streams-3.2.1-cp313-cp313-win_amd64.whl", hash = "sha256:202c5875606398b8bfaa2a290831458bb55f2196a39c1d4e5fa88a03d65ef915"},
+    {file = "winrt_windows_storage_streams-3.2.1-cp313-cp313-win_arm64.whl", hash = "sha256:ca3c5ec0aab60895006bf61053a1aca6418bc7f9a27a34791ba3443b789d230d"},
+    {file = "winrt_windows_storage_streams-3.2.1-cp39-cp39-win32.whl", hash = "sha256:1c630cfdece58fcf82e4ed86c826326123529836d6d4d855ae8e9ceeff67b627"},
+    {file = "winrt_windows_storage_streams-3.2.1-cp39-cp39-win_amd64.whl", hash = "sha256:d7ff22434a4829d616a04b068a191ac79e008f6c27541bb178c1f6f1fe7a1657"},
+    {file = "winrt_windows_storage_streams-3.2.1-cp39-cp39-win_arm64.whl", hash = "sha256:fa90244191108f85f6f7afb43a11d365aca4e0722fe8adc62fb4d2c678d0993d"},
+    {file = "winrt_windows_storage_streams-3.2.1.tar.gz", hash = "sha256:476f522722751eb0b571bc7802d85a82a3cae8b1cce66061e6e758f525e7b80f"},
 ]
 
 [package.dependencies]
-winrt-runtime = "2.2.0"
+winrt-runtime = ">=3.2.1.0,<3.3.0.0"
 
 [package.extras]
-all = ["winrt-Windows.Foundation.Collections[all] (==2.2.0)", "winrt-Windows.Foundation[all] (==2.2.0)", "winrt-Windows.Storage[all] (==2.2.0)", "winrt-Windows.System[all] (==2.2.0)"]
+all = ["winrt-Windows.Foundation.Collections[all] (>=3.2.1.0,<3.3.0.0)", "winrt-Windows.Foundation[all] (>=3.2.1.0,<3.3.0.0)", "winrt-Windows.Storage[all] (>=3.2.1.0,<3.3.0.0)", "winrt-Windows.System[all] (>=3.2.1.0,<3.3.0.0)"]
 
 [[package]]
 name = "zipp"
