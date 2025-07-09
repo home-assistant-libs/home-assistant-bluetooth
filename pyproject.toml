@@ -27,13 +27,13 @@ packages = [
 
 [tool.poetry.dependencies]
 python = ">=3.11,<3.14"
-habluetooth = ">=3.0"
+habluetooth = ">=4.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.4"
 setuptools = "^80.9.0"
 wheel = "^0.45.1"
-bleak = ">=0.19.2"
+bleak = ">=1.0.1"
 pytest-cov = "^6.2.1"
 
 [tool.poetry.group.test_build.dependencies]
