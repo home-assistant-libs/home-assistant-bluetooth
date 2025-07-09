@@ -2,6 +2,15 @@
 
 
 
+## v2.0.0 (2025-07-09)
+
+### Breaking
+
+* feat!: support bleak 1.x (#76)
+
+Co-authored-by: J. Nick Koston &lt;nick@koston.org&gt; ([`9d2de1e`](https://github.com/home-assistant-libs/home-assistant-bluetooth/commit/9d2de1e10a3e2ed8981aef8b391ff627de339ddb))
+
+
 ## v1.13.1 (2025-02-04)
 
 ### Fix
