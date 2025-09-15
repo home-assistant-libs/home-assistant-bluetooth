@@ -34,7 +34,7 @@ pytest = "^8.4"
 setuptools = "^80.9.0"
 wheel = "^0.45.1"
 bleak = ">=1.0.1"
-pytest-cov = "^6.3.0"
+pytest-cov = "^7.0.0"
 
 [tool.poetry.group.test_build.dependencies]
 twine = "^6.2.0"
