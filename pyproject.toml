@@ -30,7 +30,7 @@ python = ">=3.11,<3.14"
 habluetooth = ">=4.0"
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^8.4"
+pytest = "^9.0"
 setuptools = "^80.9.0"
 wheel = "^0.45.1"
 bleak = ">=1.0.1"
