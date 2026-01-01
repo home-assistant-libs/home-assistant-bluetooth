@@ -86,7 +86,7 @@ jobs:
 
       # Dry run of PSR to build the distribution
       - name: Test release
-        uses: python-semantic-release/python-semantic-release@v10.5.2
+        uses: python-semantic-release/python-semantic-release@v10.5.3
         with:
           no_operation_mode: true
 
@@ -138,14 +138,14 @@ jobs:
 
       # On main branch: Call PSR to build the distribution
       - name: Release
-        uses: python-semantic-release/python-semantic-release@v10.5.2
+        uses: python-semantic-release/python-semantic-release@v10.5.3
         id: release
 
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Store the distribution packages
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: python-package-distributions
           path: dist/
@@ -163,7 +163,7 @@ jobs:
 
     steps:
       - name: Download all the dists
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: python-package-distributions
           path: dist/
