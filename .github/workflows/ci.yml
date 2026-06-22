@@ -154,6 +154,7 @@ jobs:
     needs:
       - build_release
 
+    if: github.ref_name == 'main'
     runs-on: ubuntu-latest
     environment: release
     concurrency: release
