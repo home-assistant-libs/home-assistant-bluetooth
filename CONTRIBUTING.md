@@ -115,3 +115,10 @@ $ pytest tests
 The deployment should be automated and can be triggered from the Semantic Release workflow in GitHub. The next version will be based on [the commit logs](https://python-semantic-release.readthedocs.io/en/latest/commit-log-parsing.html#commit-log-parsing). This is done by [python-semantic-release](https://python-semantic-release.readthedocs.io/en/latest/index.html) via a GitHub action.
 
 [gh-issues]: https://github.com/bdraco/home-assistant-bluetooth/issues
+
+## AI policy
+
+This project follows the [Open Home Foundation AI Policy](AI_POLICY.md). In
+short: AI tools are welcome as an aid, but you must fully understand and be
+able to explain every change you submit. Contributions made by autonomous
+agents are not accepted.
