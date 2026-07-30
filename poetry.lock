@@ -44,14 +44,14 @@ testing = ["jaraco.test", "pytest (!=8.0.*)", "pytest (>=6,!=8.1.*)", "pytest-ch
 
 [[package]]
 name = "bleak"
-version = "2.1.0"
+version = "2.1.1"
 description = "Bluetooth Low Energy platform Agnostic Klient"
 optional = false
 python-versions = ">=3.10"
 groups = ["main", "dev"]
 files = [
-    {file = "bleak-2.1.0-py3-none-any.whl", hash = "sha256:d31cb6da13d77ac3c7759ec9e96baa652ea6ae8bd264d2159c9ba273bc4540ae"},
-    {file = "bleak-2.1.0.tar.gz", hash = "sha256:f628d61efddc8b4b2338649195cbbe32b3f0f79e11678fcb3f30de9e1be537da"},
+    {file = "bleak-2.1.1-py3-none-any.whl", hash = "sha256:61ac1925073b580c896a92a8c404088c5e5ec9dc3c5bd6fc17554a15779d83de"},
+    {file = "bleak-2.1.1.tar.gz", hash = "sha256:4600cc5852f2392ce886547e127623f188e689489c5946d422172adf80635cf9"},
 ]
 
 [package.dependencies]
