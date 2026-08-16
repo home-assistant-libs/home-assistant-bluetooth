@@ -1382,18 +1382,18 @@ files = [
 
 [[package]]
 name = "wheel"
-version = "0.45.1"
-description = "A built-package format for Python"
+version = "0.48.0"
+description = "Command line tool for manipulating wheel files"
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "wheel-0.45.1-py3-none-any.whl", hash = "sha256:708e7481cc80179af0e556bbf0cc00b8444c7321e2700b8d8580231d13017248"},
-    {file = "wheel-0.45.1.tar.gz", hash = "sha256:661e1abd9198507b1409a20c02106d9670b2576e916d58f520316666abca6729"},
+    {file = "wheel-0.48.0-py3-none-any.whl", hash = "sha256:3217dcc807155e45db462d7ef2431f5ddda0d7273b700d05a67b271ceb1287ab"},
+    {file = "wheel-0.48.0.tar.gz", hash = "sha256:94800765601e9171bf5d58d066e640662842bcedcbab982b2c90787a2c987322"},
 ]
 
-[package.extras]
-test = ["pytest (>=6.0.0)", "setuptools (>=65)"]
+[package.dependencies]
+packaging = ">=24.0"
 
 [[package]]
 name = "winrt-runtime"
@@ -1736,4 +1736,4 @@ test = ["big-O", "importlib-resources ; python_version < \"3.9\"", "jaraco.funct
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.11,<3.14"
-content-hash = "7ee06596a067969972c0a2024f50b9448a9c96a88507257c25b2d7fd41f9643c"
+content-hash = "9293ddc41c2dda942a1482fff02b7a1941902812b25dec3ad21de920ce68e1ce"
